@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  mongo:
+    image: mongo:latest
+    volumes:
+      - /data:/data/db:Z
+    ports:
+      - 27017:27017
