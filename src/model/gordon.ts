@@ -5,31 +5,37 @@ export default {
 			type: 'text',
 			value: '',
 			persian: 'نام',
+			require: true,
 		},
 		lastName: {
 			type: 'text',
 			value: '',
 			persian: 'نام خانوادگي',
+			require: true,
 		},
 		recordNumber: {
 			type: 'text',
 			value: '',
 			persian: 'شماره پرونده',
+			require: true,
 		},
 		ward: {
 			type: 'text',
 			value: '',
 			persian: 'بخش',
+			require: true,
 		},
 		room: {
 			type: 'اتاق',
 			value: '',
 			persian: '',
+			require: true,
 		},
 		bed: {
 			type: 'تخت',
 			value: '',
 			persian: '',
+			require: true,
 		},
 		fatherName: {
 			type: 'text',
@@ -45,11 +51,13 @@ export default {
 			type: 'text',
 			value: '',
 			persian: 'پزشک معالج',
+			require: true,
 		},
 		admissionDate: {
 			type: 'date',
 			value: new Date(),
 			persian: 'تاريخ پذيرش',
+			require: true,
 		},
 		maritalStatus: {
 			type: 'option',
@@ -64,6 +72,8 @@ export default {
 			type: 'text',
 			value: '',
 			persian: 'دليل بستري',
+
+			require: true,
 		},
 		chiefComplaint: {
 			type: 'text',
@@ -103,6 +113,7 @@ export default {
 				{ item: 'برانکارد', name: 'برانکارد' },
 			],
 			persian: 'نحوه ورود',
+			require: true,
 		},
 		admittedForm: {
 			type: 'suggest',
