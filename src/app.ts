@@ -7,6 +7,10 @@ dotenv.config();
 const API_PORT = process.env.PORT || 5050;
 const api = express();
 
+// import controllers
+
+import { patientController } from './controller/index';
+
 // necessary stuffs.
 api.use(helmet());
 api.use(cors());
@@ -14,6 +18,8 @@ api.use(express.json());
 api.use(
 	morgan(':method :url :status :res[content-length] - :response-time ms'),
 );
+
+api.use('/patient', patientController);
 
 // add some cors
 // api.use(function (req, res, next) {
