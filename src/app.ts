@@ -1,8 +1,7 @@
-import express from "express";
-import helmet from "helmet";
-import morgan from "morgan";
-import mongoose from 'mongoose'
-import cors from "cors";
+import express from 'express';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import cors from 'cors';
 import * as dotenv from 'dotenv';
 dotenv.config();
 const API_PORT = process.env.PORT || 5050;
@@ -13,13 +12,8 @@ api.use(helmet());
 api.use(cors());
 api.use(express.json());
 api.use(
-    morgan(":method :url :status :res[content-length] - :response-time ms")
+	morgan(':method :url :status :res[content-length] - :response-time ms'),
 );
-
-
-
-
-
 
 // add some cors
 // api.use(function (req, res, next) {
@@ -28,28 +22,23 @@ api.use(
 //     next();
 // });
 
-
-
-
-
 /**
  * error handlers.
  */
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 api.use((req, res, next) => {
-    res.status(401);
-    const error = new Error(`bad request`);
-    next(error);
+	res.status(401);
+	const error = new Error(`bad request`);
+	next(error);
 });
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 api.use(function (err, req, res, next) {
-    console.error(err.message);
-    err.statusCode = 405;
-    res.status(err.statusCode).json({ ok: false, message: err.message });
+	console.error(err.message);
+	err.statusCode = 405;
+	res.status(err.statusCode).json({ ok: false, message: err.message });
 });
-
-
-
-
 
 api.listen(API_PORT, () => console.log(`app is alive on port ${API_PORT}`));
