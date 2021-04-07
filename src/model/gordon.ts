@@ -1,158 +1,157 @@
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default {
 	patient: {
 		firstName: {
-			type: 'text',
+			type_of: 'text',
 			value: '',
 			persian: 'نام',
 			require: true,
 		},
 		lastName: {
-			type: 'text',
+			type_of: 'text',
 			value: '',
 			persian: 'نام خانوادگي',
 			require: true,
 		},
-		recordNumber: {
-			type: 'text',
-			value: '',
-			persian: 'شماره پرونده',
-			require: true,
-		},
-		ward: {
-			type: 'text',
-			value: '',
-			persian: 'بخش',
-			require: true,
-		},
-		room: {
-			type: 'اتاق',
-			value: '',
-			persian: '',
-			require: true,
-		},
-		bed: {
-			type: 'تخت',
-			value: '',
-			persian: '',
-			require: true,
-		},
-		fatherName: {
-			type: 'text',
-			value: '',
-			persian: 'نام پدر',
-		},
-		dateOfBirth: {
-			type: 'date',
-			value: new Date(),
-			persian: 'تاريخ تولد',
-		},
-		physicianName: {
-			type: 'text',
-			value: '',
-			persian: 'پزشک معالج',
-			require: true,
-		},
-		admissionDate: {
-			type: 'date',
-			value: new Date(),
-			persian: 'تاريخ پذيرش',
-			require: true,
-		},
-		maritalStatus: {
-			type: 'option',
-			value: false,
-			options: [
-				{ name: 'دارد', item: true },
-				{ name: 'ندارد', item: false },
-			],
-			persian: 'وضعیت تأهل',
-		},
-		hospitalizationReason: {
-			type: 'text',
-			value: '',
-			persian: 'دليل بستري',
+		// recordNumber: {
+		// 	type_of: 'text',
+		// 	value: '',
+		// 	persian: 'شماره پرونده',
+		// 	require: true,
+		// },
+		// ward: {
+		// 	type_of: 'text',
+		// 	value: '',
+		// 	persian: 'بخش',
+		// 	require: true,
+		// },
+		// room: {
+		// 	type_of: 'اتاق',
+		// 	value: '',
+		// 	persian: '',
+		// 	require: true,
+		// },
+		// bed: {
+		// 	type_of: 'تخت',
+		// 	value: '',
+		// 	persian: '',
+		// 	require: true,
+		// },
+		// fatherName: {
+		// 	type_of: 'text',
+		// 	value: '',
+		// 	persian: 'نام پدر',
+		// },
+		// dateOfBirth: {
+		// 	type_of: 'date',
+		// 	value: new Date(),
+		// 	persian: 'تاريخ تولد',
+		// },
+		// physicianName: {
+		// 	type_of: 'text',
+		// 	value: '',
+		// 	persian: 'پزشک معالج',
+		// 	require: true,
+		// },
+		// admissionDate: {
+		// 	type_of: 'date',
+		// 	value: new Date(),
+		// 	persian: 'تاريخ پذيرش',
+		// 	require: true,
+		// },
+		// maritalStatus: {
+		// 	type_of: 'option',
+		// 	value: false,
+		// 	options: [
+		// 		{ name: 'دارد', item: true },
+		// 		{ name: 'ندارد', item: false },
+		// 	],
+		// 	persian: 'وضعیت تأهل',
+		// },
+		// hospitalizationReason: {
+		// 	type_of: 'text',
+		// 	value: '',
+		// 	persian: 'دليل بستري',
 
-			require: true,
-		},
-		chiefComplaint: {
-			type: 'text',
-			value: '',
-			persian: 'شکایت اصلی',
-		},
-		hospitalizationHistory: {
-			type: 'option',
-			value: false,
-			options: [
-				{ name: 'دارد', item: true },
-				{ name: 'ندارد', item: false },
-			],
-			persian: 'سابقه بستري',
-		},
-		prostheses: {
-			type: 'option',
-			value: false,
-			options: [
-				{ name: 'دارد', item: true },
-				{ name: 'ندارد', item: false },
-			],
-			persian: 'اعضاي مصنوعي',
-		},
-		Occupation: {
-			type: 'text',
-			value: '',
-			persian: 'شغل',
-		},
+		// 	require: true,
+		// },
+		// chiefComplaint: {
+		// 	type_of: 'text',
+		// 	value: '',
+		// 	persian: 'شکایت اصلی',
+		// },
+		// hospitalizationHistory: {
+		// 	type_of: 'option',
+		// 	value: false,
+		// 	options: [
+		// 		{ name: 'دارد', item: true },
+		// 		{ name: 'ندارد', item: false },
+		// 	],
+		// 	persian: 'سابقه بستري',
+		// },
+		// prostheses: {
+		// 	type_of: 'option',
+		// 	value: false,
+		// 	options: [
+		// 		{ name: 'دارد', item: true },
+		// 		{ name: 'ندارد', item: false },
+		// 	],
+		// 	persian: 'اعضاي مصنوعي',
+		// },
+		// Occupation: {
+		// 	type_of: 'text',
+		// 	value: '',
+		// 	persian: 'شغل',
+		// },
 
-		entryFrom: {
-			type: 'suggest',
-			value: '',
-			options: [
-				{ item: 'با پاي خود', name: 'با پاي خود' },
-				{ item: 'صندلي چرخدار', name: 'صندلي چرخدار' },
-				{ item: 'برانکارد', name: 'برانکارد' },
-			],
-			persian: 'نحوه ورود',
-			require: true,
-		},
-		admittedForm: {
-			type: 'suggest',
-			value: '',
-			options: [
-				{ item: 'بصورت الکتيو', name: 'بصورت الکتيو' },
-				{ item: 'از طریق اورژانس', name: 'از طریق اورژانس' },
-				{ item: 'انتقال بین بخشی', name: 'انتقال بین بخشی' },
-			],
-			persian: 'نحوه ی بستري',
-		},
-		patientCaregiver: {
-			type: 'suggest',
-			value: '',
-			options: [
-				{ item: 0, name: 'خانواده' },
-				{ item: 1, name: 'دوستان' },
-				{ item: 2, name: ' بدون همراه' },
-			],
-			persian: 'همراهان بيمار',
-		},
-		informationSource: {
-			type: 'suggest',
-			value: '',
-			options: [
-				{ item: 'بيمار', name: 'بيمار' },
-				{ item: 'خانواده', name: 'خانواده' },
-			],
-			persian: 'منبع اطلاعات',
-		},
-		language: {
-			type: 'suggest',
-			value: '',
-			options: [
-				{ item: 'ترکي آذري', name: 'ترکي آذري' },
-				{ item: 'فارسي', name: 'فارسي' },
-			],
-			persian: 'زبان مادري',
-		},
+		// entryFrom: {
+		// 	type_of: 'suggest',
+		// 	value: '',
+		// 	options: [
+		// 		{ item: 'با پاي خود', name: 'با پاي خود' },
+		// 		{ item: 'صندلي چرخدار', name: 'صندلي چرخدار' },
+		// 		{ item: 'برانکارد', name: 'برانکارد' },
+		// 	],
+		// 	persian: 'نحوه ورود',
+		// 	require: true,
+		// },
+		// admittedForm: {
+		// 	type_of: 'suggest',
+		// 	value: '',
+		// 	options: [
+		// 		{ item: 'بصورت الکتيو', name: 'بصورت الکتيو' },
+		// 		{ item: 'از طریق اورژانس', name: 'از طریق اورژانس' },
+		// 		{ item: 'انتقال بین بخشی', name: 'انتقال بین بخشی' },
+		// 	],
+		// 	persian: 'نحوه ی بستري',
+		// },
+		// patientCaregiver: {
+		// 	type_of: 'suggest',
+		// 	value: '',
+		// 	options: [
+		// 		{ item: 0, name: 'خانواده' },
+		// 		{ item: 1, name: 'دوستان' },
+		// 		{ item: 2, name: ' بدون همراه' },
+		// 	],
+		// 	persian: 'همراهان بيمار',
+		// },
+		// informationSource: {
+		// 	type_of: 'suggest',
+		// 	value: '',
+		// 	options: [
+		// 		{ item: 'بيمار', name: 'بيمار' },
+		// 		{ item: 'خانواده', name: 'خانواده' },
+		// 	],
+		// 	persian: 'منبع اطلاعات',
+		// },
+		// language: {
+		// 	type_of: 'suggest',
+		// 	value: '',
+		// 	options: [
+		// 		{ item: 'ترکي آذري', name: 'ترکي آذري' },
+		// 		{ item: 'فارسي', name: 'فارسي' },
+		// 	],
+		// 	persian: 'زبان مادري',
+		// },
 	},
 	gordon: [
 		{
@@ -161,12 +160,12 @@ export default {
 			route: '/patient/gordon/health-promotion',
 			inputs: {
 				diseasesHistory: {
-					type: 'text',
+					type_of: 'text',
 					value: '',
 					persian: 'سابقه بيماريهاي زمينه اي / جراحی',
 				},
 				drugHistory: {
-					type: 'suggest',
+					type_of: 'suggest',
 					value: '',
 					options: [
 						{ item: 0, name: 'ندارد' },
@@ -176,13 +175,13 @@ export default {
 					persian: 'سابقه مصرف دارو',
 				},
 				allergies: {
-					type: 'suggest',
+					type_of: 'suggest',
 					value: '',
 					options: [{ item: 0, name: 'ندارد' }],
 					persian: 'حساسیت غذایی/ دارویی/ لاتکس یا مواد حاجب',
 				},
 				dailyExercise: {
-					type: 'option',
+					type_of: 'option',
 					value: false,
 					options: [
 						{ name: 'دارد', item: true },
@@ -191,7 +190,7 @@ export default {
 					persian: 'آیا بیمار عادات به ورزش منظم روزانه دارد؟',
 				},
 				redactionalActivity: {
-					type: 'option',
+					type_of: 'option',
 					value: false,
 					options: [
 						{ name: 'دارد', item: true },
@@ -200,7 +199,7 @@ export default {
 					persian: 'آیا در فعالیت های تفریحی مشارکت دارد؟',
 				},
 				stressInDailyLife: {
-					type: 'option',
+					type_of: 'option',
 					value: false,
 					options: [
 						{ name: 'دارد', item: true },
@@ -209,7 +208,7 @@ export default {
 					persian: 'آیا قادر به مدیریت استرس در زندگی روزمره می باشد؟',
 				},
 				dietRegime: {
-					type: 'option',
+					type_of: 'option',
 					value: false,
 					options: [
 						{ name: 'دارد', item: true },
@@ -218,7 +217,7 @@ export default {
 					persian: 'آیا بیمار از رژیم  غذایی تجویز شده تبعیت دارد؟',
 				},
 				medicalRegime: {
-					type: 'option',
+					type_of: 'option',
 					value: false,
 					options: [
 						{ name: 'دارد', item: true },
@@ -227,7 +226,7 @@ export default {
 					persian: 'آیا بیمار از رژیم دارویی تجویز شده تبعیت دارد؟ ',
 				},
 				drugs: {
-					type: 'option',
+					type_of: 'option',
 					value: false,
 					options: [
 						{ name: 'دارد', item: true },
@@ -236,12 +235,12 @@ export default {
 					persian: 'آیا دخانیات / الکل/ قلیان / مواد مخدر مصرف می کند؟',
 				},
 				amountOfDailyUse: {
-					type: 'text',
+					type_of: 'text',
 					value: '',
 					persian: 'نوع و میزان مصرف روزانه',
 				},
 				riskFactorProgression: {
-					type: 'option',
+					type_of: 'option',
 					value: false,
 					options: [
 						{ name: 'کاملا', item: 'کاملا' },
@@ -259,7 +258,7 @@ export default {
 			route: '/patient/gordon/nutrition',
 			inputs: {
 				NPO: {
-					type: 'suggest',
+					type_of: 'suggest',
 					value: '',
 					options: [
 						{ item: 'مایعات', name: 'مایعات' },
@@ -270,7 +269,7 @@ export default {
 					persian: 'نوع رژیم غذایی',
 				},
 				difficultyInChewing: {
-					type: 'suggest',
+					type_of: 'suggest',
 					value: '',
 					options: [
 						{ item: 'دارد', name: 'دارد' },
@@ -279,7 +278,7 @@ export default {
 					persian: 'مشکل در بلع / جویدن',
 				},
 				mouthCondition: {
-					type: 'option',
+					type_of: 'option',
 					value: 'سوءهاضمه',
 					options: [
 						{ name: 'ملتهب / دارای زخم', item: 'ملتهب / دارای زخم' },
@@ -289,7 +288,7 @@ export default {
 					persian: 'وضعیت دهان',
 				},
 				examinationGums: {
-					type: 'option',
+					type_of: 'option',
 					value: 'کامل',
 					options: [
 						{ name: 'دندان مصنوعی', item: ' دندان مصنوعی' },
@@ -299,7 +298,7 @@ export default {
 					persian: 'بررسی دندان/ لثه ها',
 				},
 				appetitePattern: {
-					type: 'option',
+					type_of: 'option',
 					value: 'نرمال',
 					options: [
 						{ name: 'بی اشتهایی', item: 'بی اشتهایی' },
@@ -308,7 +307,7 @@ export default {
 					persian: 'الگوی اشتها',
 				},
 				skinTurgor: {
-					type: 'option',
+					type_of: 'option',
 					value: 'طبیعی',
 					options: [
 						{ name: 'ضعیف', item: 'ضعیف' },
@@ -317,7 +316,7 @@ export default {
 					persian: 'تورگور پوستی',
 				},
 				vomiting: {
-					type: 'option',
+					type_of: 'option',
 					value: 'دارد',
 					options: [
 						{ name: 'دارد', item: 'دارد' },
@@ -326,7 +325,7 @@ export default {
 					persian: 'استفراغ',
 				},
 				qualityOfVomiting: {
-					type: 'option',
+					type_of: 'option',
 					value: 'دارد',
 					options: [
 						{ name: 'جهنده', item: 'جهنده' },
@@ -338,22 +337,22 @@ export default {
 					persian: 'کیفیت استفراغ',
 				},
 				height: {
-					type: 'text',
+					type_of: 'text',
 					value: '',
 					persian: 'قد',
 				},
 				weight: {
-					type: 'text',
+					type_of: 'text',
 					value: '',
 					persian: 'وزن',
 				},
 				BMI: {
-					type: 'text',
+					type_of: 'text',
 					value: '',
 					persian: 'شاخص توده بدنی',
 				},
 				looseWeightInPastThreeMonth: {
-					type: 'option',
+					type_of: 'option',
 					value: 'دارد',
 					options: [
 						{ name: 'دارد', item: 'دارد' },
@@ -362,7 +361,7 @@ export default {
 					persian: 'آیا طی 3 ماه اخیر کاهش وزن دارد؟',
 				},
 				decreasedFoodIntake: {
-					type: 'option',
+					type_of: 'option',
 					value: 'دارد',
 					options: [
 						{ name: 'دارد', item: 'دارد' },
@@ -372,7 +371,7 @@ export default {
 						'آیا طی هفته گذشته بیاشتهایی یاکاهش مصرف غذا به هر دلیل (مانند تهوع و استفراغ شدید) داشته است؟ ',
 				},
 				needSpecialCare: {
-					type: 'option',
+					type_of: 'option',
 					value: 'دارد',
 					options: [
 						{ name: 'دارد', item: 'دارد' },
@@ -388,7 +387,7 @@ export default {
 			route: '/patient/gordon/nutrition',
 			inputs: {
 				defecationPattern: {
-					type: 'suggest',
+					type_of: 'suggest',
 					value: 'نرمال',
 					options: [
 						{ item: 'نرمال', name: 'نرمال' },
@@ -401,7 +400,7 @@ export default {
 					persian: 'الگوی دفع مدفوع',
 				},
 				abdominal: {
-					type: 'option',
+					type_of: 'option',
 					value: 'دارد',
 					options: [
 						{ name: 'دارد', item: 'دارد' },
@@ -410,7 +409,7 @@ export default {
 					persian: 'آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟',
 				},
 				bowelSounds: {
-					type: 'option',
+					type_of: 'option',
 					value: 'دارد',
 					options: [
 						{ name: 'دارد', item: 'دارد' },
@@ -419,7 +418,7 @@ export default {
 					persian: 'آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟',
 				},
 				palpation: {
-					type: 'option',
+					type_of: 'option',
 					value: 'دارد',
 					options: [
 						{ name: 'دارد', item: 'دارد' },
@@ -428,7 +427,7 @@ export default {
 					persian: 'آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟',
 				},
 				percussion: {
-					type: 'option',
+					type_of: 'option',
 					value: 'دارد',
 					options: [
 						{ name: 'دارد', item: 'دارد' },
@@ -437,7 +436,7 @@ export default {
 					persian: 'آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟',
 				},
 				urinaryPattern: {
-					type: 'option',
+					type_of: 'option',
 					value: 'دارد',
 					options: [
 						{ name: 'دارد', item: 'دارد' },
@@ -445,8 +444,8 @@ export default {
 					],
 					persian: 'آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟',
 				},
-				typeOfIncontinence: {
-					type: 'option',
+				type_ofOfIncontinence: {
+					type_of: 'option',
 					value: 'دارد',
 					options: [
 						{ name: 'دارد', item: 'دارد' },

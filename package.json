@@ -12,7 +12,8 @@
     "format": "prettier --write \"./**/*.{ts,json}\"",
     "commit": "cz",
     "coverage": "jest  --coverage --coverageDirectory='coverage'",
-    "test": "jest "
+    "test": "jest",
+    "generate_types" : "ts-node ./type-generator/tsFileToJSON.ts"
   },
   "author": "mokaramifar.info",
   "license": "MIT ",
