@@ -1,97 +1,98 @@
 package main
 
 import (
+	"database/sql"
 	"encoding/json"
 	"fmt"
-	"log"
-	"os/exec"
-	"regexp"
+	"io/ioutil"
 	"strings"
+
+	_ "github.com/lib/pq"
 )
 
-func readTsFile(filePath string, objectName string) string {
-	lsCmd := exec.Command("bash", "-c", fmt.Sprintf("echo \"%s:%s\" |yarn generate_types", filePath, objectName))
-	lsOut, err := lsCmd.Output()
-	if err != nil {
-		panic(err)
-	}
-	return string(lsOut)
+const (
+	host     = "127.0.0.1"
+	port     = 5432
+	user     = "postgres"
+	password = "1202212022AaAa"
+	dbname   = "postgres"
+)
+
+type INPUT_MDN struct {
+	Name    string `json:"name"`
+	Type_of string `json:"type_of"`
+	Value   string `json:"value"`
+	Persian string `json:"persian"`
+	Require bool   `json:"require"`
 }
 
-func decodeJSON(jsonString string) interface{} {
-	regex, _ := regexp.Compile("%RES%(.?)*%RES%")
-	raw := regex.FindString(jsonString)
-	match := strings.ReplaceAll(raw, "%RES%", "")
-	var result interface{}
-	json.Unmarshal([]byte(match), &result)
+type INPUT_MDN_JSON struct {
+	Name   string      `json:"name"`
+	Struct []INPUT_MDN `json:"struct"`
+
+	// Gordon map[string]INPUT_MDN `json:"patient"`
+}
+
+func readJsonFiles() ([]byte, error) {
+	data, err := ioutil.ReadFile("../src/model/gordon.json")
+	if err != nil {
+		fmt.Println("File reading error", err)
+		return nil, err
+	}
+	return (data), nil
+}
+func decodeJSON(jsonAsBytes []byte) []INPUT_MDN_JSON {
+	var result []INPUT_MDN_JSON
+	json.Unmarshal(jsonAsBytes, &result)
 	return result
 }
 
-type InputStrcut struct {
-	Persian string
-	Type_of string
-	Value   string
-	Require bool
-}
-type InputSelfStrcut struct {
-	Name    string
-	Section InputStrcut
+func CheckError(err error) {
+	if err != nil {
+		panic(err)
+	}
 }
 
-func createStruct(raw interface{}) []InputSelfStrcut {
-	var sections []InputSelfStrcut
-	m := raw.(map[string]interface{})
-	for sectionName, sectionRawJson := range m {
-		m := sectionRawJson.(map[string]interface{})
-		var section InputSelfStrcut
-		var cc InputStrcut
-		for k, v := range m {
-			switch k {
-			case "type_of":
-				cc.Type_of = fmt.Sprint(v)
-			case "persian":
-				cc.Persian = fmt.Sprint(v)
-			case "value":
-				cc.Value = fmt.Sprint(v)
-			case "require":
-				cc.Require = v == true
+func createDatabaseTabels(jesonAsObject []INPUT_MDN_JSON) []string {
+	var result []string
+	for _, data := range jesonAsObject {
+		writerBuffer := strings.Builder{}
+		writerBuffer.WriteString(fmt.Sprintf("CREATE TABLE %s (\n", data.Name))
+		writerBuffer.WriteString("id INT GENERATED ALWAYS AS IDENTITY,\n")
+
+		for _, subData := range data.Struct {
+			writerBuffer.WriteString(string(subData.Name))
+			writerBuffer.WriteString("  TEXT")
+			if subData.Require {
+				writerBuffer.WriteString(" NOT NULL ")
 			}
+			writerBuffer.WriteString(",\n")
 		}
-		section.Section = cc
-		section.Name = sectionName
-		sections = append(sections, section)
+
+		writerBuffer.WriteString("reg_date TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP )\n")
+		result = append(result, writerBuffer.String())
 	}
-	return sections
+	return result
 }
-func getTypeOf(string) string {
-	var response string
-	switch response {
-	case "text":
-		response = "string"
-	default:
-		response = "string"
+
+func createTabels(arrayOfQueries []string) {
+	for id, query := range arrayOfQueries {
+		if id != 0 {
+			continue
+		}
+		psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
+		db, err := sql.Open("postgres", psqlconn)
+		CheckError(err)
+		fmt.Println(query)
+		defer db.Close()
+		insertStmt := query
+		_, e := db.Exec(insertStmt)
+		CheckError(e)
 	}
-	return response
-}
-func createTypeScriptInterfaceFiles(typeName string, recipe []InputSelfStrcut) string {
-	log.Print(recipe)
-	writerBuffer := strings.Builder{}
-	writerBuffer.WriteString(fmt.Sprintf("interface %s {\n", strings.Title(typeName)))
-	for _, sectionObject := range recipe {
-		writerBuffer.WriteString(fmt.Sprintf("%s: %s\n", sectionObject.Name, getTypeOf(sectionObject.Section.Type_of)))
-	}
-	writerBuffer.WriteString("}\n")
-	response := writerBuffer.String()
-	return response
-}
-func getInterface(filePath string, sectionName string) string {
-	encodedData := readTsFile(filePath, sectionName)
-	jsonString := decodeJSON(encodedData)
-	inputsStructure := createStruct(jsonString)
-	response := createTypeScriptInterfaceFiles(sectionName, inputsStructure)
-	return response
 }
 func main() {
-	x := getInterface("../src/model/gordon", "patient")
-	log.Print(x)
+	jsonAsBytes, _ := readJsonFiles()
+	jsonAsObject := decodeJSON(jsonAsBytes)
+	tablesArray := createDatabaseTabels(jsonAsObject)
+	createTabels(tablesArray)
 }
