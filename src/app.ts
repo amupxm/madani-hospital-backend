@@ -1,9 +1,10 @@
+import * as dotenv from 'dotenv';
 import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import cors from 'cors';
-import * as dotenv from 'dotenv';
 dotenv.config();
+
 const API_PORT = process.env.API_PORT || 5050;
 const api = express();
 

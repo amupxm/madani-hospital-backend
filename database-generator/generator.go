@@ -57,7 +57,7 @@ func createDatabaseTabels(jesonAsObject []INPUT_MDN_JSON) []string {
 	var result []string
 	for _, data := range jesonAsObject {
 		writerBuffer := strings.Builder{}
-		writerBuffer.WriteString(fmt.Sprintf("CREATE TABLE %s (\n", data.Name))
+		writerBuffer.WriteString(fmt.Sprintf("DROP TABLE IF EXISTS %s; \n CREATE TABLE %s (\n", data.Name, data.Name))
 		writerBuffer.WriteString("id INT GENERATED ALWAYS AS IDENTITY,\n")
 
 		for _, subData := range data.Struct {
