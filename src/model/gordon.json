@@ -191,13 +191,15 @@
 				"name": "health-promotion",
 				"persianName": "ارتقا سلامت",
 				"route": "/patient/gordon/health-promotion",
-				"inputs": {
-					"diseasesHistory": {
+				"inputs": [
+					{
+						"name ": "diseasesHistory",
 						"type_of": "text",
 						"value": "",
 						"persian": "سابقه بيماريهاي زمينه اي / جراحی"
 					},
-					"drugHistory": {
+					{
+						"name ": "drugHistory",
 						"type_of": "suggest",
 						"value": "",
 						"options": [
@@ -207,13 +209,15 @@
 						],
 						"persian": "سابقه مصرف دارو"
 					},
-					"allergies": {
+					{
+						"name ": "allergies",
 						"type_of": "suggest",
 						"value": "",
 						"options": [{ "item": 0, "name": "ندارد" }],
 						"persian": "حساسیت غذایی/ دارویی/ لاتکس یا مواد حاجب"
 					},
-					"dailyExercise": {
+					{
+						"name ": "dailyExercise",
 						"type_of": "option",
 						"value": false,
 						"options": [
@@ -222,7 +226,8 @@
 						],
 						"persian": "آیا بیمار عادات به ورزش منظم روزانه دارد؟"
 					},
-					"redactionalActivity": {
+					{
+						"name ": "redactionalActivity",
 						"type_of": "option",
 						"value": false,
 						"options": [
@@ -231,7 +236,8 @@
 						],
 						"persian": "آیا در فعالیت های تفریحی مشارکت دارد؟"
 					},
-					"stressInDailyLife": {
+					{
+						"name ": "stressInDailyLife",
 						"type_of": "option",
 						"value": false,
 						"options": [
@@ -240,7 +246,8 @@
 						],
 						"persian": "آیا قادر به مدیریت استرس در زندگی روزمره می باشد؟"
 					},
-					"dietRegime": {
+					{
+						"name ": "dietRegime",
 						"type_of": "option",
 						"value": false,
 						"options": [
@@ -249,7 +256,8 @@
 						],
 						"persian": "آیا بیمار از رژیم  غذایی تجویز شده تبعیت دارد؟"
 					},
-					"medicalRegime": {
+					{
+						"name ": "medicalRegime",
 						"type_of": "option",
 						"value": false,
 						"options": [
@@ -258,7 +266,8 @@
 						],
 						"persian": "آیا بیمار از رژیم دارویی تجویز شده تبعیت دارد؟ "
 					},
-					"drugs": {
+					{
+						"name ": "drugs",
 						"type_of": "option",
 						"value": false,
 						"options": [
@@ -267,12 +276,14 @@
 						],
 						"persian": "آیا دخانیات / الکل/ قلیان / مواد مخدر مصرف می کند؟"
 					},
-					"amountOfDailyUse": {
+					{
+						"name ": "amountOfDailyUse",
 						"type_of": "text",
 						"value": "",
 						"persian": "نوع و میزان مصرف روزانه"
 					},
-					"riskFactorProgression": {
+					{
+						"name ": "riskFactorProgression",
 						"type_of": "option",
 						"value": false,
 						"options": [
@@ -282,14 +293,15 @@
 						],
 						"persian": "آیا از نقش عوامل خطر قلبی عروقی در پیشرفت بیماری مطلع می باشد؟ "
 					}
-				}
+				]
 			},
 			{
 				"name": "nutrition",
 				"persianName": "تغذیه",
 				"route": "/patient/gordon/nutrition",
-				"inputs": {
-					"NPO": {
+				"inputs": [
+					{
+						"name": "NPO",
 						"type_of": "suggest",
 						"value": "",
 						"options": [
@@ -300,7 +312,8 @@
 						],
 						"persian": "نوع رژیم غذایی"
 					},
-					"difficultyInChewing": {
+					{
+						"name": "difficultyInChewing",
 						"type_of": "suggest",
 						"value": "",
 						"options": [
@@ -309,7 +322,8 @@
 						],
 						"persian": "مشکل در بلع / جویدن"
 					},
-					"mouthCondition": {
+					{
+						"name": "mouthCondition",
 						"type_of": "option",
 						"value": "سوءهاضمه",
 						"options": [
@@ -319,7 +333,8 @@
 						],
 						"persian": "وضعیت دهان"
 					},
-					"examinationGums": {
+					{
+						"name": "examinationGums",
 						"type_of": "option",
 						"value": "کامل",
 						"options": [
@@ -329,7 +344,8 @@
 						],
 						"persian": "بررسی دندان/ لثه ها"
 					},
-					"appetitePattern": {
+					{
+						"name": "appetitePattern",
 						"type_of": "option",
 						"value": "نرمال",
 						"options": [
@@ -338,7 +354,8 @@
 						],
 						"persian": "الگوی اشتها"
 					},
-					"skinTurgor": {
+					{
+						"name": "skinTurgor",
 						"type_of": "option",
 						"value": "طبیعی",
 						"options": [
@@ -347,7 +364,8 @@
 						],
 						"persian": "تورگور پوستی"
 					},
-					"vomiting": {
+					{
+						"name": "vomiting",
 						"type_of": "option",
 						"value": "دارد",
 						"options": [
@@ -356,7 +374,8 @@
 						],
 						"persian": "استفراغ"
 					},
-					"qualityOfVomiting": {
+					{
+						"name": "qualityOfVomiting",
 						"type_of": "option",
 						"value": "دارد",
 						"options": [
@@ -368,22 +387,21 @@
 						],
 						"persian": "کیفیت استفراغ"
 					},
-					"height": {
-						"type_of": "text",
-						"value": "",
-						"persian": "قد"
-					},
-					"weight": {
+					{ "name": "height", "type_of": "text", "value": "", "persian": "قد" },
+					{
+						"name": "weight",
 						"type_of": "text",
 						"value": "",
 						"persian": "وزن"
 					},
-					"BMI": {
+					{
+						"name": "BMI",
 						"type_of": "text",
 						"value": "",
 						"persian": "شاخص توده بدنی"
 					},
-					"looseWeightInPastThreeMonth": {
+					{
+						"name": "looseWeightInPastThreeMonth",
 						"type_of": "option",
 						"value": "دارد",
 						"options": [
@@ -392,7 +410,8 @@
 						],
 						"persian": "آیا طی 3 ماه اخیر کاهش وزن دارد؟"
 					},
-					"decreasedFoodIntake": {
+					{
+						"name": "decreasedFoodIntake",
 						"type_of": "option",
 						"value": "دارد",
 						"options": [
@@ -401,7 +420,8 @@
 						],
 						"persian": "آیا طی هفته گذشته بیاشتهایی یاکاهش مصرف غذا به هر دلیل (مانند تهوع و استفراغ شدید) داشته است؟ "
 					},
-					"needSpecialCare": {
+					{
+						"name": "needSpecialCare",
 						"type_of": "option",
 						"value": "دارد",
 						"options": [
@@ -410,14 +430,15 @@
 						],
 						"persian": "آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟"
 					}
-				}
+				]
 			},
 			{
 				"name": "eliminationAndExchange",
 				"persianName": "دفع / تبادلات",
 				"route": "/patient/gordon/nutrition",
-				"inputs": {
-					"defecationPattern": {
+				"inputs": [
+					{
+						"name": "defecationPattern",
 						"type_of": "suggest",
 						"value": "نرمال",
 						"options": [
@@ -430,7 +451,8 @@
 						],
 						"persian": "الگوی دفع مدفوع"
 					},
-					"abdominal": {
+					{
+						"name": "abdominal",
 						"type_of": "option",
 						"value": "دارد",
 						"options": [
@@ -439,7 +461,8 @@
 						],
 						"persian": "آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟"
 					},
-					"bowelSounds": {
+					{
+						"name": "bowelSounds",
 						"type_of": "option",
 						"value": "دارد",
 						"options": [
@@ -448,7 +471,8 @@
 						],
 						"persian": "آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟"
 					},
-					"palpation": {
+					{
+						"name": "palpation",
 						"type_of": "option",
 						"value": "دارد",
 						"options": [
@@ -457,7 +481,8 @@
 						],
 						"persian": "آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟"
 					},
-					"percussion": {
+					{
+						"name": "percussion",
 						"type_of": "option",
 						"value": "دارد",
 						"options": [
@@ -466,7 +491,8 @@
 						],
 						"persian": "آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟"
 					},
-					"urinaryPattern": {
+					{
+						"name": "urinaryPattern",
 						"type_of": "option",
 						"value": "دارد",
 						"options": [
@@ -475,7 +501,8 @@
 						],
 						"persian": "آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟"
 					},
-					"type_ofOfIncontinence": {
+					{
+						"name": "type_ofOfIncontinence",
 						"type_of": "option",
 						"value": "دارد",
 						"options": [
@@ -484,7 +511,7 @@
 						],
 						"persian": "آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟"
 					}
-				}
+				]
 			}
 		]
 	}
