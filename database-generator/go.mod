@@ -1,4 +1,4 @@
-module type-generator
+module amupxm-api-generator
 
 go 1.15
 
