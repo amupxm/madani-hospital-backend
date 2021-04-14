@@ -27,10 +27,10 @@ type INPUT_MDN struct {
 }
 
 type INPUT_MDN_JSON struct {
-	Name   string      `json:"name"`
-	Struct []INPUT_MDN `json:"struct"`
-
-	// Gordon map[string]INPUT_MDN `json:"patient"`
+	Name         string      `json:"name"`
+	Struct       []INPUT_MDN `json:"inputs"`
+	Dependencies []string    `json:"depends"`
+	Role         string      `json:"role"`
 }
 
 func readJsonFiles() ([]byte, error) {
@@ -57,8 +57,12 @@ func createDatabaseTabels(jesonAsObject []INPUT_MDN_JSON) []string {
 	var result []string
 	for _, data := range jesonAsObject {
 		writerBuffer := strings.Builder{}
-		writerBuffer.WriteString(fmt.Sprintf("DROP TABLE IF EXISTS %s; \n CREATE TABLE %s (\n", data.Name, data.Name))
+		writerBuffer.WriteString(fmt.Sprintf("DROP TABLE IF EXISTS %s; \nCREATE TABLE %s (\n", data.Name, data.Name))
 		writerBuffer.WriteString("id INT GENERATED ALWAYS AS IDENTITY,\n")
+		for _, depency := range data.Dependencies {
+			writerBuffer.WriteString(fmt.Sprintf(" %s_id INT NOT NULL ,\n", depency))
+
+		}
 
 		for _, subData := range data.Struct {
 			writerBuffer.WriteString(string(subData.Name))
@@ -70,6 +74,7 @@ func createDatabaseTabels(jesonAsObject []INPUT_MDN_JSON) []string {
 		}
 
 		writerBuffer.WriteString("reg_date TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP )\n")
+		fmt.Println(result)
 		result = append(result, writerBuffer.String())
 	}
 	return result
@@ -77,17 +82,14 @@ func createDatabaseTabels(jesonAsObject []INPUT_MDN_JSON) []string {
 
 func createTabels(arrayOfQueries []string) {
 	for id, query := range arrayOfQueries {
-		if id != 0 {
-			continue
-		}
 		psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 		db, err := sql.Open("postgres", psqlconn)
 		CheckError(err)
-		fmt.Println(query)
 		defer db.Close()
 		insertStmt := query
 		_, e := db.Exec(insertStmt)
 		CheckError(e)
+		fmt.Printf("ID:\t%d\tcreated\n", id)
 	}
 }
 func main() {
