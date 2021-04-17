@@ -21,6 +21,7 @@ api.use(
 );
 
 api.use('/patient', patientController);
+// api.use('/gordon', patientController);
 
 // add some cors
 // api.use(function (req, res, next) {
