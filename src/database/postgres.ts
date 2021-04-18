@@ -6,7 +6,12 @@ export { sql };
 const db = createConnectionPool(process.env.POSTGRES_URL);
 export default db;
 
-const { patient, healthpromotion, nutrition } = tables<DatabaseSchema>({
+const {
+	patient,
+	healthpromotion,
+	nutrition,
+	eliminationandexchange,
+} = tables<DatabaseSchema>({
 	serializeValue,
 });
-export { patient, healthpromotion, nutrition };
+export { patient, healthpromotion, nutrition, eliminationandexchange };
