@@ -14,7 +14,7 @@ router.post('/', async (req, res, next) => {
 	}
 });
 
-router.get(['/:id', '/'], async (req, res, next) => {
+router.get(['/:id/', '/'], async (req, res, next) => {
 	try {
 		let numbericId = Number(req.params.id);
 		// zero means select all results
@@ -29,7 +29,7 @@ router.get(['/:id', '/'], async (req, res, next) => {
 	}
 });
 
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id/', async (req, res, next) => {
 	try {
 		const numbericId = Number(req.params.id);
 		const x = await new Patient().delete(numbericId);
