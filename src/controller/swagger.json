@@ -1,0 +1,616 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0",
+      "title": "MRD",
+      "contact": {}
+    },
+    "host": "example.com",
+    "basePath": "/",
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/patient": {
+        "post": {
+          "summary": "add patiet",
+          "tags": [
+            "patient"
+          ],
+          "operationId": "addpatiet",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/addpatietrequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        },
+        "get": {
+          "summary": "get all",
+          "tags": [
+            "patient"
+          ],
+          "operationId": "getall",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/patient/{id}": {
+        "get": {
+          "summary": "get one",
+          "tags": [
+            "patient"
+          ],
+          "operationId": "getone",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        },
+        "delete": {
+          "summary": "delete one",
+          "tags": [
+            "patient"
+          ],
+          "operationId": "deleteone",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "type": "string",
+              "description": ""
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/patient/healthpromotion": {
+        "post": {
+          "summary": "add health promotion",
+          "tags": [
+            "health promotion"
+          ],
+          "operationId": "addhealthpromotion",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/addhealthpromotionrequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/patient/healthpromotion/{patient_id}": {
+        "get": {
+          "summary": "get patient health promotion",
+          "tags": [
+            "health promotion"
+          ],
+          "operationId": "getpatienthealthpromotion",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "patient_id",
+              "in": "path",
+              "required": true,
+              "type": "integer",
+              "format": "int32",
+              "description": ""
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/patient/nutrition": {
+        "post": {
+          "summary": "add nutrition",
+          "tags": [
+            "nutrition"
+          ],
+          "operationId": "addnutrition",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/addnutritionrequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/patient/nutrition/1": {
+        "get": {
+          "summary": "get patiet nuritions",
+          "tags": [
+            "nutrition"
+          ],
+          "operationId": "getpatietnuritions",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/patient/eliminationandexchange": {
+        "post": {
+          "summary": "add elimination and exchange",
+          "tags": [
+            "elimination and exchange"
+          ],
+          "operationId": "addeliminationandexchange",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "Body",
+              "in": "body",
+              "required": true,
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/addeliminationandexchangerequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      },
+      "/patient/eliminationandexchange/1": {
+        "get": {
+          "summary": "get patient elimination and exhnages",
+          "tags": [
+            "elimination and exchange"
+          ],
+          "operationId": "getpatienteliminationandexhnages",
+          "deprecated": false,
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "headers": {}
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "addpatietrequest": {
+        "title": "addpatietrequest",
+        "example": {
+          "firstname": "firstName",
+          "lastname": "lastName",
+          "recordnumber": "recordNumber",
+          "ward": "ward",
+          "room": "room",
+          "bed": "bed",
+          "fathername": "fatherName",
+          "dateofbirth": "dateOfBirth",
+          "physicianname": "physicianName",
+          "admissiondate": "admissionDate",
+          "maritalstatus": "maritalStatus",
+          "hospitalizationreason": "hospitalizationReason",
+          "chiefcomplaint": "chiefComplaint",
+          "hospitalizationhistory": "false",
+          "prostheses": "false",
+          "occupation": "Occupation",
+          "entryfrom": "entryFrom",
+          "admittedform": "ellective",
+          "patientcaregiver": "family",
+          "informationsource": "family",
+          "language": "farsi"
+        },
+        "type": "object",
+        "properties": {
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "recordnumber": {
+            "type": "string"
+          },
+          "ward": {
+            "type": "string"
+          },
+          "room": {
+            "type": "string"
+          },
+          "bed": {
+            "type": "string"
+          },
+          "fathername": {
+            "type": "string"
+          },
+          "dateofbirth": {
+            "type": "string"
+          },
+          "physicianname": {
+            "type": "string"
+          },
+          "admissiondate": {
+            "type": "string"
+          },
+          "maritalstatus": {
+            "type": "string"
+          },
+          "hospitalizationreason": {
+            "type": "string"
+          },
+          "chiefcomplaint": {
+            "type": "string"
+          },
+          "hospitalizationhistory": {
+            "type": "string"
+          },
+          "prostheses": {
+            "type": "string"
+          },
+          "occupation": {
+            "type": "string"
+          },
+          "entryfrom": {
+            "type": "string"
+          },
+          "admittedform": {
+            "type": "string"
+          },
+          "patientcaregiver": {
+            "type": "string"
+          },
+          "informationsource": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "firstname",
+          "lastname",
+          "recordnumber",
+          "ward",
+          "room",
+          "bed",
+          "fathername",
+          "dateofbirth",
+          "physicianname",
+          "admissiondate",
+          "maritalstatus",
+          "hospitalizationreason",
+          "chiefcomplaint",
+          "hospitalizationhistory",
+          "prostheses",
+          "occupation",
+          "entryfrom",
+          "admittedform",
+          "patientcaregiver",
+          "informationsource",
+          "language"
+        ]
+      },
+      "addhealthpromotionrequest": {
+        "title": "addhealthpromotionrequest",
+        "example": {
+          "patient_id": 1,
+          "riskfactorprogression": "riskfactorprogression",
+          "amountofdailyuse": "amountofdailyuse",
+          "drugs": "drugs",
+          "medicalregime": "medicalregime",
+          "dietregime": "dietregime",
+          "stressindailylife": "stressindailylife",
+          "redactionalactivity": "redactionalactivity",
+          "dailyexercise": "dailyexercise",
+          "allergies": "allergies",
+          "drughistory": "drughistory",
+          "diseaseshistory": "diseaseshistory"
+        },
+        "type": "object",
+        "properties": {
+          "patient_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "riskfactorprogression": {
+            "type": "string"
+          },
+          "amountofdailyuse": {
+            "type": "string"
+          },
+          "drugs": {
+            "type": "string"
+          },
+          "medicalregime": {
+            "type": "string"
+          },
+          "dietregime": {
+            "type": "string"
+          },
+          "stressindailylife": {
+            "type": "string"
+          },
+          "redactionalactivity": {
+            "type": "string"
+          },
+          "dailyexercise": {
+            "type": "string"
+          },
+          "allergies": {
+            "type": "string"
+          },
+          "drughistory": {
+            "type": "string"
+          },
+          "diseaseshistory": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "patient_id",
+          "riskfactorprogression",
+          "amountofdailyuse",
+          "drugs",
+          "medicalregime",
+          "dietregime",
+          "stressindailylife",
+          "redactionalactivity",
+          "dailyexercise",
+          "allergies",
+          "drughistory",
+          "diseaseshistory"
+        ]
+      },
+      "addnutritionrequest": {
+        "title": "addnutritionrequest",
+        "example": {
+          "needspecialcare": "needspecialcare",
+          "decreasedfoodintake": "decreasedfoodintake",
+          "looseweightinpastthreemonth": "looseweightinpastthreemonth",
+          "bmi": "bmi",
+          "weight": "weight",
+          "height": "height",
+          "vomiting": "vomiting",
+          "skinturgor": "skinturgor",
+          "appetitepattern": "appetitepattern",
+          "examinationgums": "examinationgums",
+          "mouthcondition": "mouthcondition",
+          "difficultyinchewing": "difficultyinchewing",
+          "npo": "npo",
+          "patient_id": 1
+        },
+        "type": "object",
+        "properties": {
+          "needspecialcare": {
+            "type": "string"
+          },
+          "decreasedfoodintake": {
+            "type": "string"
+          },
+          "looseweightinpastthreemonth": {
+            "type": "string"
+          },
+          "bmi": {
+            "type": "string"
+          },
+          "weight": {
+            "type": "string"
+          },
+          "height": {
+            "type": "string"
+          },
+          "vomiting": {
+            "type": "string"
+          },
+          "skinturgor": {
+            "type": "string"
+          },
+          "appetitepattern": {
+            "type": "string"
+          },
+          "examinationgums": {
+            "type": "string"
+          },
+          "mouthcondition": {
+            "type": "string"
+          },
+          "difficultyinchewing": {
+            "type": "string"
+          },
+          "npo": {
+            "type": "string"
+          },
+          "patient_id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "required": [
+          "needspecialcare",
+          "decreasedfoodintake",
+          "looseweightinpastthreemonth",
+          "bmi",
+          "weight",
+          "height",
+          "vomiting",
+          "skinturgor",
+          "appetitepattern",
+          "examinationgums",
+          "mouthcondition",
+          "difficultyinchewing",
+          "npo",
+          "patient_id"
+        ]
+      },
+      "addeliminationandexchangerequest": {
+        "title": "addeliminationandexchangerequest",
+        "example": {
+          "type_ofofincontinence": "type_ofofincontinence",
+          "urinarypattern": "urinarypattern",
+          "percussion": "percussion",
+          "palpation": "palpation",
+          "bowelsounds": "bowelsounds",
+          "abdominal": "abdominal",
+          "defecationpattern": "defecationpattern",
+          "patient_id": 1
+        },
+        "type": "object",
+        "properties": {
+          "type_ofofincontinence": {
+            "type": "string"
+          },
+          "urinarypattern": {
+            "type": "string"
+          },
+          "percussion": {
+            "type": "string"
+          },
+          "palpation": {
+            "type": "string"
+          },
+          "bowelsounds": {
+            "type": "string"
+          },
+          "abdominal": {
+            "type": "string"
+          },
+          "defecationpattern": {
+            "type": "string"
+          },
+          "patient_id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "required": [
+          "type_ofofincontinence",
+          "urinarypattern",
+          "percussion",
+          "palpation",
+          "bowelsounds",
+          "abdominal",
+          "defecationpattern",
+          "patient_id"
+        ]
+      }
+    },
+    "tags": [
+      {
+        "name": "patient"
+      },
+      {
+        "name": "health promotion"
+      },
+      {
+        "name": "nutrition"
+      },
+      {
+        "name": "elimination and exchange"
+      }
+    ]
+  }

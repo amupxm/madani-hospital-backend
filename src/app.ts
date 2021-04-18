@@ -10,13 +10,14 @@ const api = express();
 
 // import controllers
 
-
 import {
 	patientController,
 	healthpromotionController,
 	nutritionController,
 	eliminationandexchange,
+	apiDocumentsController,
 } from './controller/index';
+
 // necessary stuffs.
 api.use(helmet());
 api.use(cors());
@@ -24,6 +25,8 @@ api.use(express.json());
 api.use(
 	morgan(':method :url :status :res[content-length] - :response-time ms'),
 );
+api.use('/api/docs', apiDocumentsController);
+
 api.use('/patient/eliminationandexchange', eliminationandexchange);
 api.use('/patient/nutrition', nutritionController);
 api.use('/patient/healthpromotion', healthpromotionController);
