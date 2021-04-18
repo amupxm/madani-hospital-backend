@@ -13,4 +13,9 @@ export default class Patient {
 	async delete(userId: number): Promise<void> {
 		return await patient(db).delete({ id: userId });
 	}
+	async validate(userId: number): Promise<boolean> {
+		const response = await patient(db).findOne({ id: userId });
+		if (!response) throw new Error('invalid patient');
+		else return true;
+	}
 }

@@ -1,3 +1,3 @@
 import patientController from './patient/patient.controller';
-
-export { patientController };
+import healthpromotionController from './patient-healthpromotion/healthpromotion.controller';
+export { patientController, healthpromotionController };
