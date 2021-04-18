@@ -519,5 +519,173 @@
 				"persian": "آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟"
 			}
 		]
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub ",
+		"name": "musculoskeletalStatus",
+		"persianName": "دفع / تبادلات",
+		"route": "/patient/musculoskeletalstatus",
+		"inputs": [
+			{
+				"name": "muscleAtroph",
+				"type_of": "option",
+				"value": "دارد",
+				"options": [
+					{ "name": "دارد", "item": "دارد" },
+					{ "name": "ندارد", "item": "ندارد" }
+				],
+				"persian": "آتروفی عضلات"
+			},
+			{
+				"name": "muscleTon",
+				"type_of": "option",
+				"value": "دارد",
+				"options": [
+					{ "name": "نرمال", "item": "نرمال" },
+					{ "name": "اسپاستیک", "item": "اسپاستیک" },
+					{ "name": "فلاکسید", "item": "فلاکسید" }
+				],
+				"persian": "تونیسیته عضلات"
+			},
+			{
+				"name": "haveRequiredEnergy",
+				"type_of": "option",
+				"value": "دارد",
+				"options": [
+					{ "name": "دارد", "item": "دارد" },
+					{ "name": "ندارد", "item": "ندارد" }
+				],
+				"persian": "آیا انرژی لازم برای انجام فعالیت های مورد نیاز دارد؟"
+			},
+			{
+				"name": "selfCareInFeedin",
+				"type_of": "option",
+				"value": "دارد",
+				"options": [
+					{ "name": "1", "item": "1" },
+					{ "name": "2", "item": "2" },
+					{ "name": "3", "item": "3" },
+					{ "name": "4", "item": "4" },
+					{ "name": "5", "item": "5" }
+				],
+				"persian": "خودمراقبتی در خوردن."
+			},
+			{
+				"name": "selfCareInBathing",
+				"type_of": "option",
+				"value": "دارد",
+				"options": [
+					{ "name": "1", "item": "1" },
+					{ "name": "2", "item": "2" },
+					{ "name": "3", "item": "3" },
+					{ "name": "4", "item": "4" },
+					{ "name": "5", "item": "5" }
+				],
+				"persian": "استحمام"
+			},
+			{
+				"name": "selfCareInDressing",
+				"type_of": "option",
+				"value": "دارد",
+				"options": [
+					{ "name": "1", "item": "1" },
+					{ "name": "2", "item": "2" },
+					{ "name": "3", "item": "3" },
+					{ "name": "4", "item": "4" },
+					{ "name": "5", "item": "5" }
+				],
+				"persian": "لباس پوشیدن "
+			},
+			{
+				"name": "selfCareInToileting",
+				"type_of": "option",
+				"value": "دارد",
+				"options": [
+					{ "name": "1", "item": "1" },
+					{ "name": "2", "item": "2" },
+					{ "name": "3", "item": "3" },
+					{ "name": "4", "item": "4" },
+					{ "name": "5", "item": "5" }
+				],
+				"persian": "توالت رفتن"
+			},
+			{
+				"name": "selfCareInMovingInBed",
+				"type_of": "option",
+				"value": "دارد",
+				"options": [
+					{ "name": "1", "item": "1" },
+					{ "name": "2", "item": "2" },
+					{ "name": "3", "item": "3" },
+					{ "name": "4", "item": "4" },
+					{ "name": "5", "item": "5" }
+				],
+				"persian": "تحرک در تخت"
+			},
+			{
+				"name": "selfCareInWalking",
+				"type_of": "option",
+				"value": "دارد",
+				"options": [
+					{ "name": "1", "item": "1" },
+					{ "name": "2", "item": "2" },
+					{ "name": "3", "item": "3" },
+					{ "name": "4", "item": "4" },
+					{ "name": "5", "item": "5" }
+				],
+				"persian": "راه رفتن "
+			},
+			{
+				"name": "usingOfAmbulatoryAid):",
+				"type_of": "suggest",
+				"value": "خیر",
+				"options": [{ "item": "خیر", "name": "خیر" }],
+				"persian": "استفاده از وسایل کمک حرکتی"
+			},
+
+			{
+				"name": "walking",
+				"type_of": "option",
+				"value": "دارد",
+				"options": [
+					{ "name": "نرمال", "item": "نرمال" },
+					{ "name": "غیرطبیعی", "item": "غیرطبیعی" }
+				],
+				"persian": "راه رفتن"
+			},
+			{
+				"name": "rangeOfMotion",
+				"type_of": "option",
+				"value": "دارد",
+				"options": [
+					{ "name": "نرمال", "item": "نرمال" },
+					{ "name": "محدود شده", "item": "محدود شده" },
+					{ "name": "فلج", "item": "فلج" },
+					{ "name": "قطع عضو", "item": "قطع عضو" },
+					{ "name": "اندام مصنوعی ", "item": "اندام مصنوعی " },
+					{ "name": "گچ", "item": "گچ" },
+					{ "name": "آتل", "item": "آتل" }
+				],
+				"persian": "دامنه حرکت"
+			},
+			{
+				"name": "rangeOfMotion",
+				"type_of": "option",
+				"value": "دارد",
+				"options": [
+					{
+						"name": "مشکل در حفظ تعادل در وضعیت ایستاده",
+						"item": "مشکل در حفظ تعادل در وضعیت ایستاده"
+					},
+					{
+						"name": "مشکل در حفظ تعادل در وضعیت نشسته ",
+						"item": "مشکل در حفظ تعادل در وضعیت نشسته "
+					}
+				],
+				"persian": "مشکل در انتقال از تخت به صندلی"
+			}
+		]
 	}
+
 ]
