@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import Patient from '../../class/patient';
-import MainClass from '../../class/healthpromotion';
-import { nextTick } from 'node:process';
+import MainClass from '../../class/nutrition';
 const router = Router();
 
 router.post('/', async (req, res, next) => {

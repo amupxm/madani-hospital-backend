@@ -10,8 +10,11 @@ const api = express();
 
 // import controllers
 
-import { patientController } from './controller/index';
-import { healthpromotionController } from './controller/index';
+import {
+	patientController,
+	healthpromotionController,
+	nutritionController,
+} from './controller/index';
 // necessary stuffs.
 api.use(helmet());
 api.use(cors());
@@ -20,6 +23,7 @@ api.use(
 	morgan(':method :url :status :res[content-length] - :response-time ms'),
 );
 
+api.use('/patient/nutrition', nutritionController);
 api.use('/patient/healthpromotion', healthpromotionController);
 api.use('/patient', patientController);
 
