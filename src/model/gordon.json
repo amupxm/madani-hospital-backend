@@ -652,7 +652,7 @@
 				"persian": "راه رفتن "
 			},
 			{
-				"name": "usingOfAmbulatoryAid):",
+				"name": "usingOfAmbulatoryAid",
 				"type_of": "suggest",
 				"value": "",
 				"options": [{ "item": "خیر", "name": "خیر" }],
@@ -685,7 +685,7 @@
 				"persian": "دامنه حرکت"
 			},
 			{
-				"name": "rangeOfMotion",
+				"name": "rangeOfMotionToBed",
 				"type_of": "option",
 				"value": "",
 				"options": [
@@ -1041,7 +1041,7 @@
 				"persian": "آیا از وضعیت خواب خود رضایت دارد"
 			},
 			{
-				"name": "satisfiedHisSleep",
+				"name": "sleepPattern",
 				"type_of": "option",
 				"value": "",
 				"options": [
