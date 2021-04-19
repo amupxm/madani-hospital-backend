@@ -1177,8 +1177,6 @@
 				],
 				"persian": "شنوایی"
 			},
-
-
 			{
 				"name": "verbalCommunicationProblems",
 				"type_of": "option",
@@ -1188,6 +1186,75 @@
 					{ "name": "خیر", "item": "خیر" }
 				],
 				"persian": "مشکل در برقراری ارتباط کلامی"
+			}
+		]
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "selfPerception",
+		"persianName": "خود پنداره",
+		"route": "/patient/selfperception",
+		"inputs": [
+			{
+				"name": "patientOftenFeelGoodAboutSelf",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "آیا بیمار غالبا احساس خوب درباره ی خود دارد"
+			},
+			{
+				"name": "bodyChangedFeelings",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "اآیا از زمان شروع بیماری احساسات بیمار  نسبت به خود یا بدنش تغییر کرده است "
+			},
+			{
+				"name": "oftenMakeThePatientAngry",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": " آیا این تغییرات به کرات بیمار را عصبانی، ناراحت  و مضطرب می سازد"
+			},
+			{
+				"name": "patientHesitantToMakeDecisions",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "آیا بیمار  در تصمیم گیری برای اداره ی موقعیت دچار تردید می باشد"
+			},
+			{
+				"name": "skillsToHandleNewSituations",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": " آیا بیمار  مهارت های حل مسئله  برای اداره ی موقعیت ها و رویدادهای جدید دارید"
+			},
+			{
+				"name": "everFeelYouLoseHope",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "آیا احساس می کنید امید خود را ازدست داده است"
 			}
 		]
 	}
