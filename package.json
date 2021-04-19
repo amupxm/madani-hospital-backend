@@ -12,7 +12,8 @@
     "format": "prettier --write \"./**/*.{ts,json}\"",
     "commit": "cz",
     "coverage": "jest  --coverage --coverageDirectory='coverage'",
-    "test": "jest "
+    "test": "jest",
+    "generate_types": "ts-node ./type-generator/tsFileToJSON.ts"
   },
   "author": "mokaramifar.info",
   "license": "MIT ",
@@ -32,6 +33,10 @@
   "dependencies": {
     "@commitlint/config-conventional": "^12.1.1",
     "commitlint": "^12.1.1",
+    "@databases/pg": "^5.0.0",
+    "@databases/pg-schema-cli": "^4.1.0",
+    "@databases/pg-test": "^3.0.0",
+    "@databases/pg-typed": "^3.0.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "eslint": "7.17.0",

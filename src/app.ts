@@ -1,16 +1,21 @@
+import * as dotenv from 'dotenv';
 import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import cors from 'cors';
-import * as dotenv from 'dotenv';
 dotenv.config();
-const API_PORT = process.env.PORT || 5050;
+
+const API_PORT = process.env.API_PORT || 5050;
 const api = express();
 
 // import controllers
 
-import { patientController } from './controller/index';
-
+import {
+	patientController,
+	healthpromotionController,
+	nutritionController,
+	eliminationandexchange,
+} from './controller/index';
 // necessary stuffs.
 api.use(helmet());
 api.use(cors());
@@ -18,7 +23,9 @@ api.use(express.json());
 api.use(
 	morgan(':method :url :status :res[content-length] - :response-time ms'),
 );
-
+api.use('/patient/eliminationandexchange', eliminationandexchange);
+api.use('/patient/nutrition', nutritionController);
+api.use('/patient/healthpromotion', healthpromotionController);
 api.use('/patient', patientController);
 
 // add some cors
