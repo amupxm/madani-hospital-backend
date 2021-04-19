@@ -190,7 +190,7 @@
 	},
 	{
 		"depends": ["patient"],
-		"role": "sub ",
+		"role": "sub",
 		"name": "healthpromotion",
 		"persianName": "ارتقا سلامت",
 		"route": "/patient/gordon/healthpromotion",
@@ -300,7 +300,7 @@
 	},
 	{
 		"depends": ["patient"],
-		"role": "sub ",
+		"role": "sub",
 		"name": "nutrition",
 		"persianName": "تغذیه",
 		"route": "/patient/gordon/nutrition",
@@ -439,7 +439,7 @@
 	},
 	{
 		"depends": ["patient"],
-		"role": "sub ",
+		"role": "sub",
 		"name": "eliminationAndExchange",
 		"persianName": "دفع / تبادلات",
 		"route": "/patient/gordon/nutrition",
@@ -537,9 +537,9 @@
 	},
 	{
 		"depends": ["patient"],
-		"role": "sub ",
+		"role": "sub",
 		"name": "musculoskeletalStatus",
-		"persianName": "دفع / تبادلات",
+		"persianName": "وضعیت اسکلتی عضلانی",
 		"route": "/patient/musculoskeletalstatus",
 		"inputs": [
 			{
@@ -704,9 +704,9 @@
 	},
 	{
 		"depends": ["patient"],
-		"role": "sub ",
+		"role": "sub",
 		"name": "cardioVascularStatues",
-		"persianName": "دفع / تبادلات",
+		"persianName": "وضعیت قلبی عروقی ",
 		"route": "/patient/cardiocascularstatues",
 		"inputs": [
 			{
@@ -903,7 +903,7 @@
 					},
 					{
 						"name": "بیحسی و سوزن سوزن شدن اندام",
-						"item":"بیحسی و سوزن سوزن شدن اندام"
+						"item": "بیحسی و سوزن سوزن شدن اندام"
 					}
 				],
 				"persian": "در صورت سابقه اختلالات عروق محیطی کدامیک از علایم زیر را دارد"
@@ -923,6 +923,271 @@
 					}
 				],
 				"persian": "نتایج تست هومان"
+			}
+		]
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "pulmonaryStatus",
+		"persianName": "وضعیت تنفسی",
+		"route": "/patient/pulmonarystatus",
+		"inputs": [
+			{
+				"name": "respirationRate",
+				"type_of": "text",
+				"value": "",
+				"persian": "تعداد تنفس"
+			},
+			{
+				"name": "SPO2",
+				"type_of": "text",
+				"value": "",
+				"persian": "SPO2"
+			},
+			{
+				"name": "breathingPattern",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "کوسمال", "item": "کوسمال" },
+					{ "name": "شین استوک", "item": "شین استوک" },
+					{ "name": "آپنه", "item": "آپنه" }
+				],
+				"persian": "الگوی تنفس"
+			},
+			{
+				"name": "dyspnea",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "ارتوپنه", "item": "ارتوپنه" },
+					{
+						"name": "تنگی نفس حمله ای شبانه",
+						"item": "تنگی نفس حمله ای شبانه"
+					},
+					{ "name": "تنگی نفس در فعالیت", "item": "تنگی نفس در فعالیت" }
+				],
+				"persian": "تنگی نفس"
+			},
+			{
+				"name": "cough",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "دارد", "item": "دارد" },
+					{ "name": "ندارد", "item": "ندارد" }
+				],
+				"persian": "سرفه"
+			},
+			{
+				"name": "sputum",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "دارد", "item": "دارد" },
+					{ "name": "ندارد", "item": "ندارد" }
+				],
+				"persian": "خلط"
+			},
+			{
+				"name": "sputumCharacteristic",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "خونی", "item": "خونی" },
+					{ "name": "موکوسی", "item": "موکوسی" },
+					{ "name": "کفآلود", "item": "کفآلود" },
+					{ "name": "چرکی", "item": "چرکی" }
+				],
+				"persian": "مشخصات خلط"
+			},
+			{
+				"name": "lungeAuscultation",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "کراکل", "item": "کراکل" },
+					{ "name": "رونکای", "item": "رونکای" },
+					{ "name": "ویزینگ", "item": "ویزینگ" },
+					{ "name": "مالشی", "item": "مالشی" }
+				],
+				"persian": "سمع ریه"
+			}
+		]
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "pulmonaryStatus",
+		"persianName": "الگوی خواب",
+		"route": "/patient/pulmonarystatus",
+		"inputs": [
+			{
+				"name": "sleepHours",
+				"type_of": "text",
+				"value": "",
+				"persian": "چند ساعت خواب شبانه دارد"
+			},
+			{
+				"name": "satisfiedHisSleep",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "آیا از وضعیت خواب خود رضایت دارد"
+			},
+			{
+				"name": "satisfiedHisSleep",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "نرمال", "item": "نرمال" },
+					{ "name": "مشکل در به خواب رفتن", "item": "مشکل در به خواب رفتن" },
+					{ "name": "خواب منقطع", "item": "خواب منقطع" },
+					{ "name": " بی خوابی", "item": " بی خوابی" },
+					{ "name": "آپنه حین خواب", "item": "آپنه حین خواب" },
+					{ "name": "چٌرت زدن", "item": "چٌرت زدن" }
+				],
+				"persian": "الگوی خواب"
+			},
+			{
+				"name": "reasonOfSleepDisorder",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "تغییر محیط خواب", "item": "تغییر محیط خواب" },
+					{ "name": "شلوغی و سرو صدای محیط", "item": "شلوغی و سرو صدای محیط" },
+					{ "name": "نور محیط", "item": "نور محیط" },
+					{ "name": "درد", "item": "درد" },
+					{ "name": "نگرانی", "item": "نگرانی" },
+					{ "name": "شب ادراری", "item": "شب ادراری" }
+				],
+				"persian": "علت اختلال خواب از دید بیمار"
+			}
+		]
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "perceptionAndCognition",
+		"persianName": "ادراک/ شناخت ",
+		"route": "/patient/perceptionandcognition",
+		"inputs": [
+			{
+				"name": "status",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "هوشیار", "item": "هوشیار" },
+					{ "name": "حالت گیجی", "item": "حالت گیجی" },
+					{ "name": "خواب آلوده", "item": "خواب آلوده" },
+					{ "name": "خواب آلوده شدید", "item": "خواب آلوده شدید" },
+					{ "name": "کما", "item": "کما" }
+				],
+				"persian": "Status"
+			},
+			{
+				"name": "gcs",
+				"type_of": "text",
+				"value": "",
+				"persian": "glascow coma score: "
+			},
+
+			{
+				"name": "orientationTo",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "اشخاص", "item": "اشخاص" },
+					{ "name": "زمان", "item": "زمان" },
+					{ "name": "مکان", "item": "مکان" }
+				],
+				"persian": "اوریانتاسیون نسبت به"
+			},
+			{
+				"name": "memoryImpairment",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "اختلال حافظه نزدیک", "item": "اختلال حافظه نزدیک" },
+					{ "name": "اختلال حافظه دور ", "item": "اختلال حافظه دور " }
+				],
+				"persian": "اختلال حافظه "
+			},
+
+			{
+				"name": "pupilsSize",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "غیر طبیعی", "item": "غیر طبیعی" }
+				],
+				"persian": "اندازه مردمک ها"
+			},
+
+			{
+				"name": "reactiveTolightAndAccommodation",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "غیر طبیعی", "item": "غیر طبیعی" }
+				],
+				"persian": "اندازه مردمک ها"
+			},
+
+
+
+
+
+			{
+				"name": "vision",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "کاهش یافته", "item": "کاهش یافته" },
+					{ "name": "نابینا", "item": "نابینا" },
+					{ "name": "استفاده از عینک", "item": "استفاده از عینک" }
+				],
+				"persian": "بینایی"
+			},		{
+				"name": "reactiveRoLightAndAccommodation",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "غیر طبیعی", "item": "غیر طبیعی" }
+				],
+				"persian": "Reactive to Light and Accommodation"
+			},		{
+				"name": "hearing",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": " کاهش یافته", "item": " کاهش یافته" },
+					{ "name": "ناشنوا", "item": "ناشنوا" },
+					{ "name": "استفاده از سمعک", "item": "استفاده از سمعک" }
+				],
+				"persian": "شنوایی"
+			},
+
+
+			{
+				"name": "verbalCommunicationProblems",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "مشکل در برقراری ارتباط کلامی"
 			}
 		]
 	}
