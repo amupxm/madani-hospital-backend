@@ -10,7 +10,6 @@ const api = express();
 
 // import controllers
 
-
 import {
 	patientController,
 	healthpromotionController,

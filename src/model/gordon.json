@@ -190,7 +190,7 @@
 	},
 	{
 		"depends": ["patient"],
-		"role": "sub ",
+		"role": "sub",
 		"name": "healthpromotion",
 		"persianName": "ارتقا سلامت",
 		"route": "/patient/gordon/healthpromotion",
@@ -300,7 +300,7 @@
 	},
 	{
 		"depends": ["patient"],
-		"role": "sub ",
+		"role": "sub",
 		"name": "nutrition",
 		"persianName": "تغذیه",
 		"route": "/patient/gordon/nutrition",
@@ -330,7 +330,7 @@
 			{
 				"name": "mouthCondition",
 				"type_of": "option",
-				"value": "سوءهاضمه",
+				"value": "",
 				"options": [
 					{ "name": "ملتهب / دارای زخم", "item": "ملتهب / دارای زخم" },
 					{ "name": "مشکل در التیام زخم", "item": "مشکل در التیام زخم" },
@@ -341,7 +341,7 @@
 			{
 				"name": "examinationGums",
 				"type_of": "option",
-				"value": "کامل",
+				"value": "",
 				"options": [
 					{ "name": "دندان مصنوعی", "item": " دندان مصنوعی" },
 					{ "name": "نسبی", "item": "نسبی" },
@@ -352,7 +352,7 @@
 			{
 				"name": "appetitePattern",
 				"type_of": "option",
-				"value": "نرمال",
+				"value": "",
 				"options": [
 					{ "name": "بی اشتهایی", "item": "بی اشتهایی" },
 					{ "name": "نرمال", "item": "نرمال" }
@@ -362,7 +362,7 @@
 			{
 				"name": "skinTurgor",
 				"type_of": "option",
-				"value": "طبیعی",
+				"value": "",
 				"options": [
 					{ "name": "ضعیف", "item": "ضعیف" },
 					{ "name": "طبیعی", "item": "طبیعی" }
@@ -372,7 +372,7 @@
 			{
 				"name": "vomiting",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "دارد", "item": "دارد" },
 					{ "name": "ندارد", "item": "ندارد" }
@@ -382,7 +382,7 @@
 			{
 				"name": "qualityOfVomiting",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "جهنده", "item": "جهنده" },
 					{ "name": "صفراوی", "item": "صفراوی" },
@@ -392,7 +392,7 @@
 				],
 				"persian": "کیفیت استفراغ"
 			},
-			{ "name": "height", "type_of": "text", "value": "", "persian": "قد" },
+			{ "name": "height", "type_of": "text", "value": "" },
 			{
 				"name": "weight",
 				"type_of": "text",
@@ -408,7 +408,7 @@
 			{
 				"name": "looseWeightInPastThreeMonth",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "دارد", "item": "دارد" },
 					{ "name": "ندارد", "item": "ندارد" }
@@ -418,7 +418,7 @@
 			{
 				"name": "decreasedFoodIntake",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "دارد", "item": "دارد" },
 					{ "name": "ندارد", "item": "ندارد" }
@@ -428,7 +428,7 @@
 			{
 				"name": "needSpecialCare",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "دارد", "item": "دارد" },
 					{ "name": "ندارد", "item": "ندارد" }
@@ -439,7 +439,7 @@
 	},
 	{
 		"depends": ["patient"],
-		"role": "sub ",
+		"role": "sub",
 		"name": "eliminationAndExchange",
 		"persianName": "دفع / تبادلات",
 		"route": "/patient/gordon/nutrition",
@@ -447,7 +447,7 @@
 			{
 				"name": "defecationPattern",
 				"type_of": "suggest",
-				"value": "نرمال",
+				"value": "",
 				"options": [
 					{ "item": "نرمال", "name": "نرمال" },
 					{ "item": "بی‌اختیاری مدفوع", "name": "بی‌اختیاری مدفوع" },
@@ -461,76 +461,91 @@
 			{
 				"name": "abdominal",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
-					{ "name": "دارد", "item": "دارد" },
-					{ "name": "ندارد", "item": "ندارد" }
+					{ "name": "قرینه", "item": "قرینه" },
+					{ "name": "گرد", "item": "گرد" },
+					{ "name": "مسطح", "item": "مسطح" }
 				],
-				"persian": "آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟"
+				"persian": "طرح شکم"
 			},
 			{
 				"name": "bowelSounds",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
-					{ "name": "دارد", "item": "دارد" },
-					{ "name": "ندارد", "item": "ندارد" }
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "کاهش حرکات دودی", "item": "کاهش حرکات دودی" },
+					{ "name": " افزایش حرکات دودی", "item": " افزایش حرکات دودی" }
 				],
-				"persian": "آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟"
+				"persian": "سمع صداهای روده"
 			},
 			{
 				"name": "palpation",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
-					{ "name": "دارد", "item": "دارد" },
-					{ "name": "ندارد", "item": "ندارد" }
+					{ "name": "نرم", "item": "نرم" },
+					{ "name": "سفت", "item": "سفت" },
+					{ "name": "حساسیت در لمس", "item": "حساسیت در لمس" },
+					{ "name": "نفخ", "item": "نفخ" }
 				],
-				"persian": "آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟"
+				"persian": "لمس"
 			},
 			{
 				"name": "percussion",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
-					{ "name": "دارد", "item": "دارد" },
-					{ "name": "ندارد", "item": "ندارد" }
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "تمپانیک", "item": "تمپانیک" },
+					{ "name": "دال", "item": "دال" }
 				],
-				"persian": "آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟"
+				"persian": "دق"
 			},
 			{
 				"name": "urinaryPattern",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
-					{ "name": "دارد", "item": "دارد" },
-					{ "name": "ندارد", "item": "ندارد" }
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "تکرر ادراری", "item": "تکرر ادراری" },
+					{ "name": "سوزش ادرار", "item": "سوزش ادرار" },
+					{ "name": " شب ادراری", "item": " شب ادراری" },
+					{ "name": "فوریت", "item": "فوریت" },
+					{ "name": "خون در ادرار", "item": "خون در ادرار" },
+					{ "name": "احتباس", "item": "احتباس" },
+					{ "name": "بیاختیاری ادراری", "item": "بیاختیاری ادراری" },
+					{ "name": "الیگوری / آنوری", "item": "الیگوری / آنوری" }
 				],
-				"persian": "آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟"
+				"persian": "الگوی دفع ادرار"
 			},
 			{
 				"name": "type_ofOfIncontinence",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
-					{ "name": "دارد", "item": "دارد" },
-					{ "name": "ندارد", "item": "ندارد" }
+					{ "name": "urge", "item": "urge" },
+					{ "name": "mixed", "item": "mixed" },
+					{ "name": "functional", "item": "functional" },
+					{ "name": "overflow", "item": "overflow" },
+					{ "name": "transient", "item": "transient" }
 				],
-				"persian": "آیا وضعیت کلی بیمار وخیم و نیازمند مراقبت ویژه است؟"
+				"persian": "اگر بی اختیاری دارد، نوع آن"
 			}
 		]
 	},
 	{
 		"depends": ["patient"],
-		"role": "sub ",
+		"role": "sub",
 		"name": "musculoskeletalStatus",
-		"persianName": "دفع / تبادلات",
+		"persianName": "وضعیت اسکلتی عضلانی",
 		"route": "/patient/musculoskeletalstatus",
 		"inputs": [
 			{
 				"name": "muscleAtroph",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "دارد", "item": "دارد" },
 					{ "name": "ندارد", "item": "ندارد" }
@@ -540,7 +555,7 @@
 			{
 				"name": "muscleTon",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "نرمال", "item": "نرمال" },
 					{ "name": "اسپاستیک", "item": "اسپاستیک" },
@@ -551,7 +566,7 @@
 			{
 				"name": "haveRequiredEnergy",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "دارد", "item": "دارد" },
 					{ "name": "ندارد", "item": "ندارد" }
@@ -561,7 +576,7 @@
 			{
 				"name": "selfCareInFeedin",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "1", "item": "1" },
 					{ "name": "2", "item": "2" },
@@ -574,7 +589,7 @@
 			{
 				"name": "selfCareInBathing",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "1", "item": "1" },
 					{ "name": "2", "item": "2" },
@@ -587,7 +602,7 @@
 			{
 				"name": "selfCareInDressing",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "1", "item": "1" },
 					{ "name": "2", "item": "2" },
@@ -600,7 +615,7 @@
 			{
 				"name": "selfCareInToileting",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "1", "item": "1" },
 					{ "name": "2", "item": "2" },
@@ -613,7 +628,7 @@
 			{
 				"name": "selfCareInMovingInBed",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "1", "item": "1" },
 					{ "name": "2", "item": "2" },
@@ -626,7 +641,7 @@
 			{
 				"name": "selfCareInWalking",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "1", "item": "1" },
 					{ "name": "2", "item": "2" },
@@ -639,7 +654,7 @@
 			{
 				"name": "usingOfAmbulatoryAid):",
 				"type_of": "suggest",
-				"value": "خیر",
+				"value": "",
 				"options": [{ "item": "خیر", "name": "خیر" }],
 				"persian": "استفاده از وسایل کمک حرکتی"
 			},
@@ -647,7 +662,7 @@
 			{
 				"name": "walking",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "نرمال", "item": "نرمال" },
 					{ "name": "غیرطبیعی", "item": "غیرطبیعی" }
@@ -657,7 +672,7 @@
 			{
 				"name": "rangeOfMotion",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{ "name": "نرمال", "item": "نرمال" },
 					{ "name": "محدود شده", "item": "محدود شده" },
@@ -672,7 +687,7 @@
 			{
 				"name": "rangeOfMotion",
 				"type_of": "option",
-				"value": "دارد",
+				"value": "",
 				"options": [
 					{
 						"name": "مشکل در حفظ تعادل در وضعیت ایستاده",
@@ -686,6 +701,814 @@
 				"persian": "مشکل در انتقال از تخت به صندلی"
 			}
 		]
-	}
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "cardioVascularStatues",
+		"persianName": "وضعیت قلبی عروقی ",
+		"route": "/patient/cardiocascularstatues",
+		"inputs": [
+			{
+				"name": "pulse",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "نامنظم", "item": "نامنظم" },
+					{ "name": "قوی", "item": "قوی" },
+					{ "name": "ضعیف", "item": "ضعیف" }
+				],
+				"persian": "نبض"
+			},
+			{
+				"name": "pulseDeficit",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "کسر نبض"
+			},
+			{
+				"name": "peripheralPulsesOfTheLimbs",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "قابل لمس", "item": "قابل لمس" },
+					{ "name": "خیر", "item": "خیر" },
+					{
+						"name": "پرشدگی مویرگی در کمتر از 3 ثانیه",
+						"item": "پرشدگی مویرگی در کمتر از 3 ثانیه"
+					},
+					{ "name": "با تاخیر", "item": "با تاخیر" }
+				],
+				"persian": "لمس نبض های محیطی اندام ها"
+			},
+			{
+				"name": "limbTemperature",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "سرد", "item": "سرد" },
+					{ "name": "داغ", "item": "داغ" }
+				],
+				"persian": "دمای اندام"
+			},
+			{
+				"name": "skinColor",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "رنگ پریده", "item": "رنگ پریده" },
+					{ "name": "سیانوتیک", "item": "سیانوتیک" },
+					{ "name": "4", "item": "4" },
+					{ "name": "5", "item": "5" }
+				],
+				"persian": "رنگ پوست"
+			},
+			{
+				"name": "selfCareInDressing",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "دارد", "item": "دارد" },
+					{ "name": "ندارد", "item": "ندارد" },
+					{ "name": "ادم گوده گذار", "item": "ادم گوده گذار" },
+					{ "name": "غیر گوده گذار", "item": "غیر گوده گذار" }
+				],
+				"persian": "ادم"
+			},
+			{
+				"name": "edemaLocation",
+				"type_of": "text",
+				"value": "",
+				"persian": "محل ادم"
+			},
+			{
+				"name": "edemaRating",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "+1", "item": "+1" },
+					{ "name": "+2", "item": "+2" },
+					{ "name": "+3", "item": "+3" },
+					{ "name": "+4", "item": "+4" },
+					{ "name": "+5", "item": "+5" }
+				],
+				"persian": "درجه ادم"
+			},
+			{
+				"name": "femoralPulse",
+				"type_of": "text",
+				"value": "",
+				"persian": "نبض فمورال"
+			},
+			{
+				"name": "poplitealPulse",
+				"type_of": "text",
+				"value": "",
+				"persian": "نبض پاپلیتئال"
+			},
+			{
+				"name": "posteriorlPulse",
+				"type_of": "text",
+				"value": "",
+				"persian": "نبض پشت درشت نی"
+			},
+			{
+				"name": "dorsalisPulse",
+				"type_of": "text",
+				"value": "",
+				"persian": "نبض دورسالیس پدیس"
+			},
+			{
+				"name": " jugularVeinPressure",
+				"type_of": "text",
+				"value": "",
+				"persian": "فشار ورید ژوگولرچند سانتی متر است؟"
+			},
+			{
+				"name": "positiveHepatojugularReflux",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "دارد", "item": "دارد" },
+					{ "name": "ندارد", "item": "ندارد" }
+				],
+				"persian": "رفلکس هپاتوژوگولر مثبت"
+			},
+			{
+				"name": "extraHeartSound",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "سوفل سیستولیک", "item": "سوفل سیستولیک" },
+					{ "name": "سوفل دیاستولیک", "item": "سوفل دیاستولیک" }
+				],
+				"persian": "صداهای قلبی اضافی"
+			},
+			{
+				"name": "standingBloodPressure",
+				"type_of": "text",
+				"value": "",
+				"persian": "فشار خون ایستاده"
+			},
+			{
+				"name": "supineBloodPressure",
+				"type_of": "text",
+				"value": "",
+				"persian": "فشار خون خوابیده"
+			},
+			{
+				"name": "fowlersBloodPressure",
+				"type_of": "text",
+				"value": "",
+				"persian": "فشار خون نشسته"
+			},
+			{
+				"name": "orthostaticHypotension",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "خیر", "item": "خیر" },
+					{ "name": "بله", "item": "بله" }
+				],
+				"persian": "هیپوتانسیون وضعیتی"
+			},
+			{
+				"name": "experienceSymptoms",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "خیر", "item": "خیر" },
+					{ "name": "بله", "item": "بله" }
+				],
+				"persian": "آیا در طی فعالیت دچار علایمی از قبیل خستگی، طپش قلب، تنگی نفس یا درد قفسه سینه میشود؟"
+			},
+			{
+				"name": "intermittentClaudication",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{
+						"name": "لنگیدن متناوب",
+						"item": "لنگیدن متناوب"
+					},
+					{
+						"name": "تندرنس اندام",
+						"item": "تندرنس اندام"
+					},
+					{
+						"name": "بیحسی و سوزن سوزن شدن اندام",
+						"item": "بیحسی و سوزن سوزن شدن اندام"
+					}
+				],
+				"persian": "در صورت سابقه اختلالات عروق محیطی کدامیک از علایم زیر را دارد"
+			},
+			{
+				"name": "HomanTestResult",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{
+						"name": "منفی",
+						"item": "منفی"
+					},
+					{
+						"name": "مثبت",
+						"item": "مثبت"
+					}
+				],
+				"persian": "نتایج تست هومان"
+			}
+		]
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "pulmonaryStatus",
+		"persianName": "وضعیت تنفسی",
+		"route": "/patient/pulmonarystatus",
+		"inputs": [
+			{
+				"name": "respirationRate",
+				"type_of": "text",
+				"value": "",
+				"persian": "تعداد تنفس"
+			},
+			{
+				"name": "SPO2",
+				"type_of": "text",
+				"value": "",
+				"persian": "SPO2"
+			},
+			{
+				"name": "breathingPattern",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "کوسمال", "item": "کوسمال" },
+					{ "name": "شین استوک", "item": "شین استوک" },
+					{ "name": "آپنه", "item": "آپنه" }
+				],
+				"persian": "الگوی تنفس"
+			},
+			{
+				"name": "dyspnea",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "ارتوپنه", "item": "ارتوپنه" },
+					{
+						"name": "تنگی نفس حمله ای شبانه",
+						"item": "تنگی نفس حمله ای شبانه"
+					},
+					{ "name": "تنگی نفس در فعالیت", "item": "تنگی نفس در فعالیت" }
+				],
+				"persian": "تنگی نفس"
+			},
+			{
+				"name": "cough",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "دارد", "item": "دارد" },
+					{ "name": "ندارد", "item": "ندارد" }
+				],
+				"persian": "سرفه"
+			},
+			{
+				"name": "sputum",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "دارد", "item": "دارد" },
+					{ "name": "ندارد", "item": "ندارد" }
+				],
+				"persian": "خلط"
+			},
+			{
+				"name": "sputumCharacteristic",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "خونی", "item": "خونی" },
+					{ "name": "موکوسی", "item": "موکوسی" },
+					{ "name": "کفآلود", "item": "کفآلود" },
+					{ "name": "چرکی", "item": "چرکی" }
+				],
+				"persian": "مشخصات خلط"
+			},
+			{
+				"name": "lungeAuscultation",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "کراکل", "item": "کراکل" },
+					{ "name": "رونکای", "item": "رونکای" },
+					{ "name": "ویزینگ", "item": "ویزینگ" },
+					{ "name": "مالشی", "item": "مالشی" }
+				],
+				"persian": "سمع ریه"
+			}
+		]
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "pulmonaryStatus",
+		"persianName": "الگوی خواب",
+		"route": "/patient/pulmonarystatus",
+		"inputs": [
+			{
+				"name": "sleepHours",
+				"type_of": "text",
+				"value": "",
+				"persian": "چند ساعت خواب شبانه دارد"
+			},
+			{
+				"name": "satisfiedHisSleep",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "آیا از وضعیت خواب خود رضایت دارد"
+			},
+			{
+				"name": "satisfiedHisSleep",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "نرمال", "item": "نرمال" },
+					{ "name": "مشکل در به خواب رفتن", "item": "مشکل در به خواب رفتن" },
+					{ "name": "خواب منقطع", "item": "خواب منقطع" },
+					{ "name": " بی خوابی", "item": " بی خوابی" },
+					{ "name": "آپنه حین خواب", "item": "آپنه حین خواب" },
+					{ "name": "چٌرت زدن", "item": "چٌرت زدن" }
+				],
+				"persian": "الگوی خواب"
+			},
+			{
+				"name": "reasonOfSleepDisorder",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "تغییر محیط خواب", "item": "تغییر محیط خواب" },
+					{ "name": "شلوغی و سرو صدای محیط", "item": "شلوغی و سرو صدای محیط" },
+					{ "name": "نور محیط", "item": "نور محیط" },
+					{ "name": "درد", "item": "درد" },
+					{ "name": "نگرانی", "item": "نگرانی" },
+					{ "name": "شب ادراری", "item": "شب ادراری" }
+				],
+				"persian": "علت اختلال خواب از دید بیمار"
+			}
+		]
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "perceptionAndCognition",
+		"persianName": "ادراک/ شناخت ",
+		"route": "/patient/perceptionandcognition",
+		"inputs": [
+			{
+				"name": "status",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "هوشیار", "item": "هوشیار" },
+					{ "name": "حالت گیجی", "item": "حالت گیجی" },
+					{ "name": "خواب آلوده", "item": "خواب آلوده" },
+					{ "name": "خواب آلوده شدید", "item": "خواب آلوده شدید" },
+					{ "name": "کما", "item": "کما" }
+				],
+				"persian": "Status"
+			},
+			{
+				"name": "gcs",
+				"type_of": "text",
+				"value": "",
+				"persian": "glascow coma score: "
+			},
 
+			{
+				"name": "orientationTo",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "اشخاص", "item": "اشخاص" },
+					{ "name": "زمان", "item": "زمان" },
+					{ "name": "مکان", "item": "مکان" }
+				],
+				"persian": "اوریانتاسیون نسبت به"
+			},
+			{
+				"name": "memoryImpairment",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "اختلال حافظه نزدیک", "item": "اختلال حافظه نزدیک" },
+					{ "name": "اختلال حافظه دور ", "item": "اختلال حافظه دور " }
+				],
+				"persian": "اختلال حافظه "
+			},
+
+			{
+				"name": "pupilsSize",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "غیر طبیعی", "item": "غیر طبیعی" }
+				],
+				"persian": "اندازه مردمک ها"
+			},
+
+			{
+				"name": "reactiveTolightAndAccommodation",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "غیر طبیعی", "item": "غیر طبیعی" }
+				],
+				"persian": "اندازه مردمک ها"
+			},
+
+			{
+				"name": "vision",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "کاهش یافته", "item": "کاهش یافته" },
+					{ "name": "نابینا", "item": "نابینا" },
+					{ "name": "استفاده از عینک", "item": "استفاده از عینک" }
+				],
+				"persian": "بینایی"
+			},
+			{
+				"name": "reactiveRoLightAndAccommodation",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": "غیر طبیعی", "item": "غیر طبیعی" }
+				],
+				"persian": "Reactive to Light and Accommodation"
+			},
+			{
+				"name": "hearing",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "طبیعی", "item": "طبیعی" },
+					{ "name": " کاهش یافته", "item": " کاهش یافته" },
+					{ "name": "ناشنوا", "item": "ناشنوا" },
+					{ "name": "استفاده از سمعک", "item": "استفاده از سمعک" }
+				],
+				"persian": "شنوایی"
+			},
+			{
+				"name": "verbalCommunicationProblems",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "مشکل در برقراری ارتباط کلامی"
+			}
+		]
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "selfPerception",
+		"persianName": "خود پنداره",
+		"route": "/patient/selfperception",
+		"inputs": [
+			{
+				"name": "patientOftenFeelGoodAboutSelf",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "آیا بیمار غالبا احساس خوب درباره ی خود دارد"
+			},
+			{
+				"name": "bodyChangedFeelings",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "اآیا از زمان شروع بیماری احساسات بیمار  نسبت به خود یا بدنش تغییر کرده است "
+			},
+			{
+				"name": "oftenMakeThePatientAngry",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": " آیا این تغییرات به کرات بیمار را عصبانی، ناراحت  و مضطرب می سازد"
+			},
+			{
+				"name": "patientHesitantToMakeDecisions",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "آیا بیمار  در تصمیم گیری برای اداره ی موقعیت دچار تردید می باشد"
+			},
+			{
+				"name": "skillsToHandleNewSituations",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": " آیا بیمار  مهارت های حل مسئله  برای اداره ی موقعیت ها و رویدادهای جدید دارید"
+			},
+			{
+				"name": "everFeelYouLoseHope",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "آیا احساس می کنید امید خود را ازدست داده است"
+			}
+		]
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "rolesAndRelationships",
+		"persianName": "نقش ها و روابط ",
+		"route": "/patient/rolesandrelationships",
+		"inputs": [
+			{
+				"name": "liveAloneOrWithFamily",
+				"type_of": "text",
+				"value": "",
+				"persian": "آیا بیمار به تنهایی زندگی میکند یا با خانواده؟"
+			},
+			{
+				"name": "familyCommunication",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "مناسب", "item": "مناسب" },
+					{ "name": "مختل شده", "item": "مختل شده" }
+				],
+				"persian": "ارتباطات خانوادگی"
+			},
+			{
+				"name": "familyDependentOnPatient",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "آیا خانواده برای انجام امورات به بیمار وابسته هستند"
+			},
+			{
+				"name": "unknown",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "اختلال در نقش های اعضای خانواده", "item": "اختلال در نقش های اعضای خانواده" },
+					{ "name": "اختلال در نقش والدینی یا نقش همسری بیمار", "item": "اختلال در نقش والدینی یا نقش همسری بیمار" },
+					{ "name": " کاهش تعاملات اجتماعی / روابط با دوستان", "item": " کاهش تعاملات اجتماعی / روابط با دوستان" }
+				],
+				"persian": "آیا بیماری باعث موارد زیر شده است"
+			},
+			{
+				"name": "decreasedSocialInteraction",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "آیا بیمار احساس تنهایی می کند"
+			},
+			{
+				"name": "familyIncome",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "آیا درآمد خانواده برای تامین نیازها کافی می باشد"
+			}
+		]
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "sexualityMen",
+		"persianName": "مددجوی مذکر جنسی",
+		"route": "/patient/sexualitymen",
+		"inputs": [
+
+			{
+				"name": "prostaticHyperplasia",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "بزرگی پروستات"
+			},
+			{
+				"name": "historyOfBloodyGenitalDischarge",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "سابقه ترشحات تناسلی خونی"
+			},
+			{
+				"name": "sexuallyTransmittedDiseases",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "بیماری مقاربتی"
+			},
+			{
+				"name": "effectOfTheDiseaseOnSexualPerformance",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "تاثیر منفی بیماری بر عملکرد و رضایت جنسی"
+			}
+		]
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "sexualityFemale",
+		"persianName": "مددجوی مذکر جنسی",
+		"route": "/patient/sexualityfemale",
+		"inputs": [
+
+			{
+				"name": "Pregnant",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "باردار"
+			},
+			{
+				"name": "menopause",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "یائسه"
+			},
+			{
+				"name": "metrorrhagia",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "متروراژی"
+			},
+			{
+				"name": "mMenorrhagia",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "منوراژی"
+			},
+			{
+				"name": "sexuallyTransmittedDiseases",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "بیماری مقاربتی"
+			},
+			{
+				"name": "effectOfTheDiseaseOnSexualPerformance",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "تاثیر منفی بیماری بر عملکرد و رضایت جنسی"
+			}
+		]
+	},	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "sexualityFemale",
+		"persianName": "مددجوی مذکر جنسی",
+		"route": "/patient/sexualityfemale",
+		"inputs": [
+
+			{
+				"name": "Pregnant",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "باردار"
+			},
+			{
+				"name": "menopause",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "یائسه"
+			},
+			{
+				"name": "metrorrhagia",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "متروراژی"
+			},
+			{
+				"name": "mMenorrhagia",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "منوراژی"
+			},
+			{
+				"name": "sexuallyTransmittedDiseases",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "بیماری مقاربتی"
+			},
+			{
+				"name": "effectOfTheDiseaseOnSexualPerformance",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "تاثیر منفی بیماری بر عملکرد و رضایت جنسی"
+			}
+		]
+	}
 ]

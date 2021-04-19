@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@commitlint/config-conventional": "^12.1.1",
+    "commitlint": "^12.1.1",
     "@databases/pg": "^5.0.0",
     "@databases/pg-schema-cli": "^4.1.0",
     "@databases/pg-test": "^3.0.0",
