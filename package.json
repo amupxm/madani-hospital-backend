@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@commitlint/config-conventional": "^12.1.1",
+    "commitlint": "^12.1.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "eslint": "7.17.0",
