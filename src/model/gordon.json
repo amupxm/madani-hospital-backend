@@ -1309,7 +1309,7 @@
 					{ "name": "خیر", "item": "خیر" }
 				],
 				"persian": "آیا بیمار احساس تنهایی می کند"
-			}
+			},
 			{
 				"name": "familyIncome",
 				"type_of": "option",
@@ -1319,6 +1319,195 @@
 					{ "name": "خیر", "item": "خیر" }
 				],
 				"persian": "آیا درآمد خانواده برای تامین نیازها کافی می باشد"
+			}
+		]
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "sexualityMen",
+		"persianName": "مددجوی مذکر جنسی",
+		"route": "/patient/sexualitymen",
+		"inputs": [
+
+			{
+				"name": "prostaticHyperplasia",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "بزرگی پروستات"
+			},
+			{
+				"name": "historyOfBloodyGenitalDischarge",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "سابقه ترشحات تناسلی خونی"
+			},
+			{
+				"name": "sexuallyTransmittedDiseases",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "بیماری مقاربتی"
+			},
+			{
+				"name": "effectOfTheDiseaseOnSexualPerformance",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "تاثیر منفی بیماری بر عملکرد و رضایت جنسی"
+			}
+		]
+	},
+	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "sexualityFemale",
+		"persianName": "مددجوی مذکر جنسی",
+		"route": "/patient/sexualityfemale",
+		"inputs": [
+
+			{
+				"name": "Pregnant",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "باردار"
+			},
+			{
+				"name": "menopause",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "یائسه"
+			},
+			{
+				"name": "metrorrhagia",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "متروراژی"
+			},
+			{
+				"name": "mMenorrhagia",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "منوراژی"
+			},
+			{
+				"name": "sexuallyTransmittedDiseases",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "بیماری مقاربتی"
+			},
+			{
+				"name": "effectOfTheDiseaseOnSexualPerformance",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "تاثیر منفی بیماری بر عملکرد و رضایت جنسی"
+			}
+		]
+	},	{
+		"depends": ["patient"],
+		"role": "sub",
+		"name": "sexualityFemale",
+		"persianName": "مددجوی مذکر جنسی",
+		"route": "/patient/sexualityfemale",
+		"inputs": [
+
+			{
+				"name": "Pregnant",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "باردار"
+			},
+			{
+				"name": "menopause",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "یائسه"
+			},
+			{
+				"name": "metrorrhagia",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "متروراژی"
+			},
+			{
+				"name": "mMenorrhagia",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "منوراژی"
+			},
+			{
+				"name": "sexuallyTransmittedDiseases",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "بیماری مقاربتی"
+			},
+			{
+				"name": "effectOfTheDiseaseOnSexualPerformance",
+				"type_of": "option",
+				"value": "",
+				"options": [
+					{ "name": "بله", "item": "بله" },
+					{ "name": "خیر", "item": "خیر" }
+				],
+				"persian": "تاثیر منفی بیماری بر عملکرد و رضایت جنسی"
 			}
 		]
 	}
