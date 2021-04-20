@@ -168,6 +168,5 @@ func main() {
 	go createClasses(jsonAsObject, &wg)
 	go createDatabaseConnector(jsonAsObject, &wg)
 	go createController(jsonAsObject, &wg)
-
 	wg.Wait()
 }
