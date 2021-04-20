@@ -92,9 +92,38 @@ func createTabels(arrayOfQueries []string) {
 		fmt.Printf("ID:\t%d\tcreated\n", id)
 	}
 }
+
+// func createFileNameBase(input INPUT_MDN_JSON) string {
+// 	writer := strings.Builder{}
+// 	writer.WriteString(input.Name)
+// 	for _, i := range input.Dependencies {
+// 		writer.WriteString(fmt.Sprintf("-%s", i))
+// 	}
+// 	return writer.String()
+// }
+
+func createClasses(inputs []INPUT_MDN_JSON) {
+	for _, inputList := range inputs {
+		data, err := ioutil.ReadFile("./templates/class.template")
+		if err != nil {
+			panic(err)
+		}
+		stringData := string(data[:])
+		lowerCaseName := strings.ToLower(inputList.Name)
+		applied_lowerCase := strings.ReplaceAll(stringData, "%LOWER_CASE%", lowerCaseName)
+		titleCaseName := strings.Title(inputList.Name)
+		applied_TitleCase := strings.ReplaceAll(applied_lowerCase, "%TITLE_CASE%", titleCaseName)
+		err = ioutil.WriteFile(fmt.Sprintf("/home/amupxm/Desktop/workspace/personal/madani-hospital-backend/database-generator/class/%sController.ts", lowerCaseName), []byte(applied_TitleCase), 0777)
+		CheckError(err)
+
+		// os.Rename(fmt.Sprintf("%sController.ts", lowerCaseName), fmt.Sprintf("class/%sController.ts", lowerCaseName))
+	}
+}
+
 func main() {
 	jsonAsBytes, _ := readJsonFiles()
 	jsonAsObject := decodeJSON(jsonAsBytes)
-	tablesArray := createDatabaseTabels(jsonAsObject)
-	createTabels(tablesArray)
+	// tablesArray := createDatabaseTabels(jsonAsObject)
+	// createTabels(tablesArray)
+	createClasses(jsonAsObject)
 }

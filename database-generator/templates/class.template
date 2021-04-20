@@ -1,0 +1,15 @@
+import db, { %LOWER_CASE% } from '../database/postgres';
+import { %TITLE_CASE%_InsertParameters } from '../__generated__/%LOWER_CASE%';
+
+export default class Patient {
+	async insert(data: %TITLE_CASE%_InsertParameters): Promise<number> {
+		const response = await %LOWER_CASE%(db).insert(data);
+		return response[0].id;
+	}
+	async getAll(
+		patient_id: number,
+	): Promise<%TITLE_CASE%_InsertParameters[]> {
+		const response = await %LOWER_CASE%(db).find({ patient_id });
+		return response.all();
+	}
+}
