@@ -1020,9 +1020,9 @@
 	{
 		"depends": ["patient"],
 		"role": "sub",
-		"name": "pulmonaryStatus",
+		"name": "sleepPattern",
 		"persianName": "الگوی خواب",
-		"route": "/patient/pulmonarystatus",
+		"route": "/patient/sleeppattern",
 		"inputs": [
 			{
 				"name": "sleepHours",
@@ -1294,9 +1294,18 @@
 				"type_of": "option",
 				"value": "",
 				"options": [
-					{ "name": "اختلال در نقش های اعضای خانواده", "item": "اختلال در نقش های اعضای خانواده" },
-					{ "name": "اختلال در نقش والدینی یا نقش همسری بیمار", "item": "اختلال در نقش والدینی یا نقش همسری بیمار" },
-					{ "name": " کاهش تعاملات اجتماعی / روابط با دوستان", "item": " کاهش تعاملات اجتماعی / روابط با دوستان" }
+					{
+						"name": "اختلال در نقش های اعضای خانواده",
+						"item": "اختلال در نقش های اعضای خانواده"
+					},
+					{
+						"name": "اختلال در نقش والدینی یا نقش همسری بیمار",
+						"item": "اختلال در نقش والدینی یا نقش همسری بیمار"
+					},
+					{
+						"name": " کاهش تعاملات اجتماعی / روابط با دوستان",
+						"item": " کاهش تعاملات اجتماعی / روابط با دوستان"
+					}
 				],
 				"persian": "آیا بیماری باعث موارد زیر شده است"
 			},
@@ -1329,7 +1338,6 @@
 		"persianName": "مددجوی مذکر جنسی",
 		"route": "/patient/sexualitymen",
 		"inputs": [
-
 			{
 				"name": "prostaticHyperplasia",
 				"type_of": "option",
@@ -1379,76 +1387,6 @@
 		"persianName": "مددجوی مذکر جنسی",
 		"route": "/patient/sexualityfemale",
 		"inputs": [
-
-			{
-				"name": "Pregnant",
-				"type_of": "option",
-				"value": "",
-				"options": [
-					{ "name": "بله", "item": "بله" },
-					{ "name": "خیر", "item": "خیر" }
-				],
-				"persian": "باردار"
-			},
-			{
-				"name": "menopause",
-				"type_of": "option",
-				"value": "",
-				"options": [
-					{ "name": "بله", "item": "بله" },
-					{ "name": "خیر", "item": "خیر" }
-				],
-				"persian": "یائسه"
-			},
-			{
-				"name": "metrorrhagia",
-				"type_of": "option",
-				"value": "",
-				"options": [
-					{ "name": "بله", "item": "بله" },
-					{ "name": "خیر", "item": "خیر" }
-				],
-				"persian": "متروراژی"
-			},
-			{
-				"name": "mMenorrhagia",
-				"type_of": "option",
-				"value": "",
-				"options": [
-					{ "name": "بله", "item": "بله" },
-					{ "name": "خیر", "item": "خیر" }
-				],
-				"persian": "منوراژی"
-			},
-			{
-				"name": "sexuallyTransmittedDiseases",
-				"type_of": "option",
-				"value": "",
-				"options": [
-					{ "name": "بله", "item": "بله" },
-					{ "name": "خیر", "item": "خیر" }
-				],
-				"persian": "بیماری مقاربتی"
-			},
-			{
-				"name": "effectOfTheDiseaseOnSexualPerformance",
-				"type_of": "option",
-				"value": "",
-				"options": [
-					{ "name": "بله", "item": "بله" },
-					{ "name": "خیر", "item": "خیر" }
-				],
-				"persian": "تاثیر منفی بیماری بر عملکرد و رضایت جنسی"
-			}
-		]
-	},	{
-		"depends": ["patient"],
-		"role": "sub",
-		"name": "sexualityFemale",
-		"persianName": "مددجوی مذکر جنسی",
-		"route": "/patient/sexualityfemale",
-		"inputs": [
-
 			{
 				"name": "Pregnant",
 				"type_of": "option",

@@ -5,7 +5,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"os"
 	"strings"
+	"sync"
 
 	_ "github.com/lib/pq"
 )
@@ -74,13 +76,12 @@ func createDatabaseTabels(jesonAsObject []INPUT_MDN_JSON) []string {
 		}
 
 		writerBuffer.WriteString("reg_date TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP )\n")
-		fmt.Println(result)
 		result = append(result, writerBuffer.String())
 	}
 	return result
 }
 
-func createTabels(arrayOfQueries []string) {
+func createTabels(arrayOfQueries []string, inputs []INPUT_MDN_JSON, wg *sync.WaitGroup) {
 	for id, query := range arrayOfQueries {
 		psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 		db, err := sql.Open("postgres", psqlconn)
@@ -89,20 +90,12 @@ func createTabels(arrayOfQueries []string) {
 		insertStmt := query
 		_, e := db.Exec(insertStmt)
 		CheckError(e)
-		fmt.Printf("ID:\t%d\tcreated\n", id)
+		fmt.Printf("ID:\t%d\tcreated(%s)\n", id, inputs[id].Name)
+		defer wg.Done()
 	}
 }
 
-// func createFileNameBase(input INPUT_MDN_JSON) string {
-// 	writer := strings.Builder{}
-// 	writer.WriteString(input.Name)
-// 	for _, i := range input.Dependencies {
-// 		writer.WriteString(fmt.Sprintf("-%s", i))
-// 	}
-// 	return writer.String()
-// }
-
-func createClasses(inputs []INPUT_MDN_JSON) {
+func createClasses(inputs []INPUT_MDN_JSON, wq *sync.WaitGroup) {
 	for _, inputList := range inputs {
 		data, err := ioutil.ReadFile("./templates/class.template")
 		if err != nil {
@@ -113,17 +106,68 @@ func createClasses(inputs []INPUT_MDN_JSON) {
 		applied_lowerCase := strings.ReplaceAll(stringData, "%LOWER_CASE%", lowerCaseName)
 		titleCaseName := strings.Title(inputList.Name)
 		applied_TitleCase := strings.ReplaceAll(applied_lowerCase, "%TITLE_CASE%", titleCaseName)
-		err = ioutil.WriteFile(fmt.Sprintf("/home/amupxm/Desktop/workspace/personal/madani-hospital-backend/database-generator/class/%sController.ts", lowerCaseName), []byte(applied_TitleCase), 0777)
+		currentPath, err := os.Getwd()
 		CheckError(err)
-
-		// os.Rename(fmt.Sprintf("%sController.ts", lowerCaseName), fmt.Sprintf("class/%sController.ts", lowerCaseName))
+		err = ioutil.WriteFile(fmt.Sprintf("%s/class/%s.ts", currentPath, lowerCaseName), []byte(applied_TitleCase), 0777)
+		CheckError(err)
 	}
+	defer wq.Done()
+}
+
+func createController(inputs []INPUT_MDN_JSON, wq *sync.WaitGroup) {
+	for _, inputList := range inputs {
+		if inputList.Role == "sub" {
+
+			data, err := ioutil.ReadFile("./templates/controller.template")
+			CheckError(err)
+			stringData := string(data)
+			generatedString := strings.ReplaceAll(stringData, "%LOWER_CASE%", strings.ToLower(inputList.Name))
+			currentPath, err := os.Getwd()
+			CheckError(err)
+			path := ""
+			for _, x := range inputList.Dependencies {
+				path = path + "/" + x
+			}
+			os.Mkdir(currentPath+"/controller/"+path, 0775)
+			err = ioutil.WriteFile(fmt.Sprintf("%s/controller/%s/%s.ts", currentPath, path, inputList.Name), []byte(generatedString), 0777)
+			CheckError(err)
+		}
+	}
+
+	defer wq.Done()
+
+}
+
+func createDatabaseConnector(inputs []INPUT_MDN_JSON, wg *sync.WaitGroup) {
+	postgresData, err := ioutil.ReadFile("./templates/postgres.template")
+	CheckError(err)
+	postgresString := string(postgresData)
+	pen := strings.Builder{}
+	pen.WriteString("\n")
+	for index, i := range inputs {
+		pen.WriteString(i.Name)
+		if index != len(inputs) {
+			pen.WriteString(",\n")
+		}
+	}
+	result := strings.ReplaceAll(postgresString, "%CONNECTION_LIST%", pen.String())
+	currentPath, err := os.Getwd()
+	CheckError(err)
+	err = ioutil.WriteFile(fmt.Sprintf("%s/database/postgres.ts", currentPath), []byte(result), 0777)
+	CheckError(err)
+	wg.Done()
 }
 
 func main() {
 	jsonAsBytes, _ := readJsonFiles()
 	jsonAsObject := decodeJSON(jsonAsBytes)
-	// tablesArray := createDatabaseTabels(jsonAsObject)
-	// createTabels(tablesArray)
-	createClasses(jsonAsObject)
+	tablesArray := createDatabaseTabels(jsonAsObject)
+	var wg sync.WaitGroup
+	wg.Add(4)
+	go createTabels(tablesArray, jsonAsObject, &wg)
+	go createClasses(jsonAsObject, &wg)
+	go createDatabaseConnector(jsonAsObject, &wg)
+	go createController(jsonAsObject, &wg)
+
+	wg.Wait()
 }

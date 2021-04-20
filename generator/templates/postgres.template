@@ -1,0 +1,14 @@
+import createConnectionPool, { sql } from '@databases/pg';
+import tables from '@databases/pg-typed';
+import DatabaseSchema, { serializeValue } from '../__generated__';
+
+export { sql };
+const db = createConnectionPool(process.env.POSTGRES_URL);
+export default db;
+
+const {
+%CONNECTION_LIST%
+} = tables<DatabaseSchema>({
+	serializeValue,
+});
+export {%CONNECTION_LIST%};
